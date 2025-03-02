@@ -39,6 +39,10 @@
             iframe{
                 border: 0px;
             }
+            .media-container {
+                display: flex;
+            }
+
         </style>
     </head>
     <body>
@@ -263,9 +267,9 @@
                                 download>Descarca imaginea cu cipul la rezolutie
                                 inalta!</a>
                         </li>
-
                     </ul>
-                    <div>
+
+                    <div clas="media-container">
                         <div>
                             <a
                                 href="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
@@ -279,19 +283,47 @@
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-
+                        <embed src="resurse/Datasheet_NVIDIA_RTX_A1000.pdf"
+                            width="500" height="375" type="application/pdf"
+                            id="pdf">
                     </div>
+
+                    <section id="imgmap">
+                        <h3>Poti apasa pe obiectele din aceasta imagine!</h3>
+                        <img src="resurse/imagini/formap.jpg" alt="map"
+                            usemap="#map">
+                        <map name="map">
+                            <area target="_blank" shape="rect"
+                                coords="34,44,270,350" alt="macbook"
+                                href="https://istyle.ro/macbook-pro-14-procesor-apple-m4-pro-12-nuclee-cpu-si-16-nuclee-gpu-24gb-512gb-ssd-space-black.html">
+                            <area shape="rect" coords="290,172,333,250"
+                                alt="telefon"
+                                href="https://istyle.ro/iphone-16-pro-512gb-black-titanium.html"
+                                target="_blank">
+                            <area target="_blank" shape="circle"
+                                coords="337,300,44" alt="cafea"
+                                href="https://ro.wikipedia.org/wiki/Cafea">
+                        </map>
+                    </section>
+                </section>
+
+                <section id="harta">
+                    <h2>Unde ne gasesti:</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884301139307!2d26.097011776949405!3d44.43553547107595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1740932748696!5m2!1sen!2sro"
+                        width="400" height="300" style="border:0;"
+                        allowfullscreen loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
 
             </main>
+            
             <footer>
                 <a href="#"> Back to top</a>
 
                 <address><a href="tel:+40773123456">Telefon</a>
                     <a href="https://maps.app.goo.gl/DYrM7jYDZ68DDsgH9"
-                        target="_blank">Bulevardul Regina Elisabeta,
-                        Bucuresti</a>
-
+                        target="_blank">Bulevardul Regina Elisabeta</a>
                     <a href="mailto:itc@cti.ro">Lasa-ne un email!</a>
                     <a aria-label="Chat on WhatsApp"
                         href="https://wa.me/773123456">
@@ -300,6 +332,7 @@
                 <p><small>Copyright &copy; <time
                             datetime="2025-03-01">2025</time>
                         Diaconescu Octavian</small></p>
+
             </footer>
         </body>
     </html>
