@@ -2,18 +2,14 @@
 <html lang="ro">
     <head>
         <title>Magazin Online de Componente PC!</title>
-        <meta charset="UTF-8"> <!-- codificarea în memorie a caracterelor-->
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- va fi explicat când ajungem la CSS -->
         <meta name="keywords"
             content="Componente PC online, Placi video, gaming, Procesoare, Intel, AMD, Memorii RAM, ram, SSD, NVMe, HDD, Placa de baza, Surse alimentare PC, Carcase gaming, Coolere procesoare, Pret componente PC, Configurator PC custom, Placa video nvidia, Placa video amd, Accesorii gaming, Garantie componente PC, Oferta componente PC, Comparatie componente hardware, Kit upgrade PC
         ">
-        <!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
         <meta name="description"
             content="Componente PC la preturi accesibile!">
-        <!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
         <meta name="author" content="Octavian Diaconescu">
-        <!-- autorul/autoarea paginii-->
         <link rel="icon" type="image/png"
             href="resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/svg+xml"
@@ -22,46 +18,22 @@
         <link rel="apple-touch-icon" sizes="180x180"
             href="resurse/imagini/favicon/apple-touch-icon.png">
         <link rel="manifest" href="resurse/imagini/favicon/site.webmanifest">
-        <style>
-            
-            footer{
-                display : flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            footer > a{
-            color: red;
-            text-decoration : none;
-            text-align : right;
-            }
-
-            iframe{
-                border: 0px;
-            }
-            .media-container {
-                display: flex;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="resurse/css/general.css">
     </head>
     <body>
         <header>
-            <h1>Titlul paginii</h1>
+            <h1><a href="#">CyberWare</a></h1>
             <nav>
                 <ul>
                     <li>
-                        <a href="#"><b>Acasa</b></a>
-                    </li>
-                    <li>
-                        <a href="#s1"><b>Prima</b> sectiune</a>
+                        <a href="#s1">Prima sectiune</a>
                         <ul>
                             <li>
                                 <a href="#subs1">Subsectiune 1</a>
                             </ul>
                         </li>
                         <li>
-                            <a href="#s2"><b>A doua</b> sectiune</a>
+                            <a href="#s2">A doua sectiune</a>
                             <ul>
                                 <li>
                                     <a href="#subs2">Subsectiune 2</a>
@@ -70,14 +42,14 @@
                         </li>
 
                         <li>
-                            <a href="#img"><b>Imagine</b></a>
+                            <a href="#img">Imagine</a>
                         </li>
                         <li>
-                            <a href="#informatii-utile"><b>Informatii
-                                    utile</b></a>
+                            <a href="#informatii-utile">Informatii
+                                utile</a>
                         </li>
                         <li>
-                            <a href="#linkuri-utile"><b>Linkuri utile</b></a>
+                            <a href="#linkuri-utile">Linkuri utile</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,105 +57,125 @@
             <main>
                 <section id="s1">
                     <h2>Titlu sectiune</h2>
-                    <p>Aceasta este un paragraf</p>
+                    <p class="text">Aceasta este un paragraf</p>
                     <section id="subs1">
                         <h3>Subsectiune</h3>
-                        <p><strong>Un alt paragraf</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Harum delectus earum sequi, praesentium
-                            reprehenderit
-                            quasi, rerum, dicta quas inventore perspiciatis
-                            voluptatibus quaerat. Tempora quia beatae ad natus.
-                            Reprehenderit, amet ratione!</p>
-                        <p>
-                            În era <s>gigital</s><ins> digitală</ins>, a avea un
-                            PC performant este
-                            esențial pentru orice pasionat de gaming. De aceea,
-                            poți găsi cele mai bune Componente PC online
-                            pentru a-ți asigura o experiență de neuitat.
-                            Indiferent dacă ești în căutarea unor Placi
-                            video de top sau a unor Procesoare de ultimă
-                            generație, oferta noastră include atât procesoare
-                            Intel cât și AMD, astfel încât să poți alege
-                            soluția perfectă pentru nevoile tale.
-                        </p>
-                        <p>
-                            Printre elementele cheie se numără și Memorii RAM
-                            (ram), care, alături de soluțiile de stocare precum
-                            <i>SSD, NVMe și HDD</i>, îți asigură performanțe
-                            ridicate și timpi de răspuns minimi. Nu putem uita
-                            nici
-                            importanța unei placi de baza solide, care leagă
-                            toate aceste componente într-un sistem coerent.
-                            Pentru
-                            a-ți completa configurația, găsești și Surse
-                            alimentare PC, Carcase gaming și Coolere
-                            procesoare, care nu doar că optimizează fluxul de
-                            aer,
-                            dar adaugă și un plus de stil întregului setup.
-                        </p>
-                        <p>
-                            Cu ajutorul <b>Configurator PC custom</b>, poți
-                            personaliza fiecare detaliu, de la alegerea Placa
-                            video <b>nvidia</b> sau Placa video <b>amd</b>, până
-                            la
-                            selecția celor mai bune Accesorii gaming.
-                            Totodată, Pret componente PC rămâne competitiv,
-                            iar Garantie componente PC îți oferă siguranța
-                            că investiția ta este protejată. Pentru a face cea
-                            mai bună alegere, poți consulta și Comparatie
-                            componente hardware și opțiunile din Oferta
-                            componente PC, iar dacă dorești să îți aduci
-                            sistemul la nivelul următor, verifică și Kit
-                            upgrade PC.
+                        <div class="text">
+                            <p><strong>Un alt paragraf</strong></p>
+                            <p>Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit.
+                                Harum delectus earum sequi, praesentium
+                                reprehenderit
+                                quasi, rerum, dicta quas inventore perspiciatis
+                                voluptatibus quaerat. Tempora quia beatae ad
+                                natus.
+                                Reprehenderit, amet ratione!</p>
+                            <p>
+                                În era <s>gigital</s><ins> digitală</ins>, a
+                                avea un
+                                PC performant este
+                                esențial pentru orice pasionat de gaming. De
+                                aceea,
+                                poți găsi cele mai bune Componente PC online
+                                pentru a-ți asigura o experiență de neuitat.
+                                Indiferent dacă ești în căutarea unor Placi
+                                video de top sau a unor Procesoare de ultimă
+                                generație, oferta noastră include atât
+                                procesoare
+                                Intel cât și AMD, astfel încât să poți alege
+                                soluția perfectă pentru nevoile tale.
+                            </p>
+                            <p>
+                                Printre elementele cheie se numără și Memorii
+                                RAM
+                                (ram), care, alături de soluțiile de stocare
+                                precum
+                                <i>SSD, NVMe și HDD</i>, îți asigură performanțe
+                                ridicate și timpi de răspuns minimi. Nu putem
+                                uita
+                                nici
+                                importanța unei placi de baza solide, care leagă
+                                toate aceste componente într-un sistem coerent.
+                                Pentru
+                                a-ți completa configurația, găsești și Surse
+                                alimentare PC, Carcase gaming și Coolere
+                                procesoare, care nu doar că optimizează fluxul
+                                de
+                                aer,
+                                dar adaugă și un plus de stil întregului setup.
+                            </p>
+                            <p>
+                                Cu ajutorul <b>Configurator PC custom</b>, poți
+                                personaliza fiecare detaliu, de la alegerea
+                                Placa
+                                video <b>nvidia</b> sau Placa video <b>amd</b>,
+                                până
+                                la
+                                selecția celor mai bune Accesorii gaming.
+                                Totodată, Pret componente PC rămâne competitiv,
+                                iar Garantie componente PC îți oferă siguranța
+                                că investiția ta este protejată. Pentru a face
+                                cea
+                                mai bună alegere, poți consulta și Comparatie
+                                componente hardware și opțiunile din Oferta
+                                componente PC, iar dacă dorești să îți aduci
+                                sistemul la nivelul următor, verifică și Kit
+                                upgrade PC.
 
-                            Descoperă acum toate soluțiile noastre și
-                            transformă-ți pasiunea pentru gaming într-o
-                            experiență de neegalat!</p>
-                        <q
-                            cite="https://rightwords.ro/citate/cand-in-sfarsit-ti-ai-cumparat-suficienta-memorie--10644">
-                            Când în sfârșit ți-ai cumpărat suficientă memorie,
-                            constați că nu ai suficient spațiu pe disc.
-                            <cite>-Edward A. Murphy</cite>
-                        </q>
+                                Descoperă acum toate soluțiile noastre și
+                                transformă-ți pasiunea pentru gaming într-o
+                                experiență de neegalat!</p>
+                            <br>
+                            <q
+                                cite="https://rightwords.ro/citate/cand-in-sfarsit-ti-ai-cumparat-suficienta-memorie--10644">
+                                Când în sfârșit ți-ai cumpărat suficientă
+                                memorie,
+                                constați că nu ai suficient spațiu pe disc.
+                                <cite>-Edward A. Murphy</cite>
+                            </q>
+                        </div>
                     </section>
                 </section>
                 <section id="s2">
                     <h2>Titlu sectiune 2</h2>
-                    <p>Aceasta este un paragraf 2</p>
+                    <p class="text">Aceasta este un paragraf 2</p>
                     <section id="subs2">
                         <h3>Titlu subsectiune 2</h3>
-                        <blockquote>Lorem ipsum dolor sit amet, consectetur
-                            adipisicing
-                            elit.
-                            Perferendis vitae voluptate ex laborum. Mollitia,
-                            maxime
-                            vel! Est, possimus quaerat aperiam quas dolor ipsam
-                            reiciendis, error maiores non fugiat iste
-                            nam.</blockquote>
-                        <ol>
-                            <li>
-                                Lorem ipsum dolor sit amet consectetur
+                        <div class="text">
+                            <blockquote>Lorem ipsum dolor sit amet, consectetur
                                 adipisicing
                                 elit.
-                            </li>
-                            <li>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing
-                                elit.
-                            </li>
-                            <li>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing
-                                elit.
-                            </li>
-                        </ol>
+                                Perferendis vitae voluptate ex laborum.
+                                Mollitia,
+                                maxime
+                                vel! Est, possimus quaerat aperiam quas dolor
+                                ipsam
+                                reiciendis, error maiores non fugiat iste
+                                nam.</blockquote>
+                            <ol>
+                                <li>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing
+                                    elit.
+                                </li>
+                                <li>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing
+                                    elit.
+                                </li>
+                                <li>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing
+                                    elit.
+                                </li>
+                            </ol>
+                        </div>
                     </section>
                 </section>
                 <section id="img">
                     <h2>Sectiunea despre <em>imagine</em>:</h2>
-                    <p>Iata o imagine!</p>
+                    <p class="text">Iata o imagine!</p>
                     <figure>
                         <picture>
                             <source srcset="resurse/imagini/imagine-mare.jpg"
@@ -253,6 +245,7 @@
 
                     </details>
                 </section>
+                <hr>
                 <section id="linkuri-utile">
                     <h2>Linkuri</h2>
                     <p>Iata cateva linkuri utile!</p>
@@ -268,9 +261,8 @@
                                 inalta!</a>
                         </li>
                     </ul>
-
-                    <div clas="media-container">
-                        <div>
+                    <div class="media-container">
+                        <div id="links">
                             <a
                                 href="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
                                 target="ifr">Nvidia RTX 5000</a>
@@ -278,32 +270,37 @@
                                 href="https://www.youtube.com/embed/ELEu8CtEVMQ?si=AKYj0KoLsgrqvm8y"
                                 target="ifr">DLSS4</a>
                         </div>
-                        <iframe name="ifr" width="560" height="315"
-                            src="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                        <embed src="resurse/Datasheet_NVIDIA_RTX_A1000.pdf"
-                            width="500" height="375" type="application/pdf"
-                            id="pdf">
+                        <div id="ifrembed">
+                            <iframe name="ifr" width="560" height="315"
+                                src="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <embed src="resurse/Datasheet_NVIDIA_RTX_A1000.pdf"
+                                width="500" height="375" type="application/pdf"
+                                id="pdf">
+                        </div>
                     </div>
 
                     <section id="imgmap">
+                        <br>
                         <h3>Poti apasa pe obiectele din aceasta imagine!</h3>
-                        <img src="resurse/imagini/formap.jpg" alt="map"
-                            usemap="#map">
-                        <map name="map">
-                            <area target="_blank" shape="rect"
-                                coords="34,44,270,350" alt="macbook"
-                                href="https://istyle.ro/macbook-pro-14-procesor-apple-m4-pro-12-nuclee-cpu-si-16-nuclee-gpu-24gb-512gb-ssd-space-black.html">
-                            <area shape="rect" coords="290,172,333,250"
-                                alt="telefon"
-                                href="https://istyle.ro/iphone-16-pro-512gb-black-titanium.html"
-                                target="_blank">
-                            <area target="_blank" shape="circle"
-                                coords="337,300,44" alt="cafea"
-                                href="https://ro.wikipedia.org/wiki/Cafea">
-                        </map>
+                        <br>
+                        <div id="imgmap">
+                            <img src="resurse/imagini/formap.jpg" alt="map"
+                                usemap="#map">
+                            <map name="map">
+                                <area target="_blank" shape="rect"
+                                    coords="34,44,270,350" alt="macbook"
+                                    href="https://istyle.ro/macbook-pro-14-procesor-apple-m4-pro-12-nuclee-cpu-si-16-nuclee-gpu-24gb-512gb-ssd-space-black.html">
+                                <area shape="rect" coords="290,172,333,250"
+                                    alt="telefon"
+                                    href="https://istyle.ro/iphone-16-pro-512gb-black-titanium.html"
+                                    target="_blank">
+                                <area target="_blank" shape="circle"
+                                    coords="337,300,44" alt="cafea"
+                                    href="https://ro.wikipedia.org/wiki/Cafea">
+                            </map></div>
                     </section>
                 </section>
 
@@ -317,14 +314,14 @@
                 </section>
 
             </main>
-            
+
             <footer>
                 <a href="#"> Back to top</a>
 
-                <address><a href="tel:+40773123456">Telefon</a>
+                <address><a href="tel:+40773123456">Telefon |</a>
                     <a href="https://maps.app.goo.gl/DYrM7jYDZ68DDsgH9"
-                        target="_blank">Bulevardul Regina Elisabeta</a>
-                    <a href="mailto:itc@cti.ro">Lasa-ne un email!</a>
+                        target="_blank">Bulevardul Regina Elisabeta |</a>
+                    <a href="mailto:itc@cti.ro">Lasa-ne un email! |</a>
                     <a aria-label="Chat on WhatsApp"
                         href="https://wa.me/773123456">
                         Lasa-ne un mesaj pe WhatsApp!
@@ -334,5 +331,6 @@
                         Diaconescu Octavian</small></p>
 
             </footer>
+            
         </body>
     </html>

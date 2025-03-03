@@ -1,0 +1,155 @@
+/* HEADER */
+
+header {
+    background-color: rgb(34, 34, 34);
+    color: rgb(199, 81, 77);
+    padding: 20px;
+    margin-left: -5px;
+    margin-top: -20px;
+    margin-right: -5px;
+    width: 100%;
+}
+
+header a {
+    color: rgb(234, 234, 234);
+}
+
+a:hover {
+    color: rgb(199, 81, 77);
+}
+
+a:active {
+    color: rgb(199, 81, 77);
+}
+
+h1{
+    padding-left: 25px;
+    color: rgb(199, 81, 77);
+}
+h1 a{
+    text-decoration: none;
+    color: rgb(199, 81, 77);
+}
+nav ul {
+    list-style: none;
+    padding-left: 25px;;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: rgb(234, 234, 234);
+} 
+
+nav ul ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(34, 34, 34);
+    padding: 10px;
+    list-style: none;
+}
+
+nav ul li:hover > ul{
+    display: block;
+}
+
+nav a{
+    font-weight: bold;
+}
+/* BODY */
+
+body {
+    background-color: rgb(26, 26, 26);
+    color: rgb(234, 234, 234);
+}
+
+#linkuri-utile a{
+    color: rgb(234, 234, 234);
+}
+a:hover {
+    color: rgb(199, 81, 77);
+}
+
+h2{
+    color: rgb(199, 81, 77);
+    padding-left: 30px;
+    padding-top: 10px;
+}
+h3{
+    padding-top: 5px;
+    padding-left: 60px;
+    margin: 0;
+}
+.text{
+    padding-left: 45px;
+    margin-right: 20px;
+    text-align: justify;
+    max-width: 95%
+}
+
+.media-container #links {
+    margin-left: 20px;
+}
+figure{
+    text-align: center;
+}
+
+#linkuri-utile a{
+    color: rgb(234, 234, 234);
+    text-decoration: none;
+}
+#linkuri-utile a:hover{
+    color: rgb(199, 81, 77);
+}
+#linkuri-utile a:active{
+    color: rgb(199, 81, 77);
+}
+#informatii-utile details summary:hover{
+    color: rgb(199, 81, 77);
+  
+}
+#informatii-utile details{
+    cursor: pointer;
+}
+
+#ifrembed{
+    border: 0px;
+    margin-left: 50px;
+}
+#imgmap{
+   margin-left: 28px;
+}
+#harta iframe{
+    width: 99%;
+    margin-left: 10px;
+
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(199, 81, 77);
+}
+footer address{
+    margin-left: 100px;
+}
+footer a{
+    color: rgb(199, 81, 77);
+    text-decoration: none;
+    text-align: center;
+    font-style: normal;
+
+}
+
+
+
