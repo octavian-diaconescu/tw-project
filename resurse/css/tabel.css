@@ -1,0 +1,51 @@
+.container-tabel{
+    border-radius: 15px;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 0;
+}
+#tabel p{
+    margin-top: 10px;
+    text-align: center;
+}
+tr, td{
+    transition: background-color 100ms ease-in-out;
+}
+
+th, td {
+    border: 1px solid rgba(234, 234, 234, .1);
+    padding: 0.8rem;
+    text-align: center;
+}
+
+td:nth-of-type(odd){
+    background-color: rgba(149, 39, 35, .5);
+}
+
+td:nth-of-type(even){
+    background-color: rgba(87, 32, 97, .5) ;
+    color: var(--culoare-gri);
+}
+
+.nodisplay{
+    display: none;
+}
+th {
+    background-color: rgb(149, 39, 35);
+}
+
+tfoot{
+    background-color: rgb(149, 39, 35);
+}
+
+tr:hover{
+    background-color: rgba(87, 32, 97, .5);
+}
+td:hover{
+    background-color: rgba(199, 81, 77, 1);
+}

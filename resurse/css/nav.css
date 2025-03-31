@@ -1,0 +1,120 @@
+#hamburger-fa{
+    display: none;
+}
+
+#buton-acasa{
+    display: none;
+}
+nav ul {
+    list-style: none;
+    padding-left: 25px;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--culoare-gri);
+}
+nav ul .buton-meniu{
+    position: relative;
+    border: 1px solid var(--culoare-rosie);
+    padding: 10px;
+    border-radius: 50px;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+nav ul .buton-meniu > a{
+    margin: 0;
+    position: relative;
+    color: var(--culoare-gri);
+    z-index: 1;
+
+}
+nav ul .buton-meniu::after{
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: rgba(149, 39, 35, .7);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    transform-origin: center;
+    transition: width .3s ease-out, height .3s ease-out;
+
+}
+nav ul .buton-meniu:hover::after{
+    width: 100%;
+    height: 100%;
+}
+nav ul .buton-submeniu{
+    position: relative;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* background-color: var(--culoare-neagra); */
+    padding: .7em;
+    list-style: none;
+}
+nav ul .buton-meniu ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 80%;
+    left: 10%;
+    transform: scale(0);
+    transform-origin: left top;
+    transition: transform .4s ease;
+}
+nav ul .buton-meniu:hover ul {
+    transform: scale(1);
+}
+nav ul .buton-submeniu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4px auto;
+    color: var(--culoare-neagra);
+    border: 1px solid var(--culoare-rosie);
+    background-color: var(--culoare-neagra);
+    border-radius: 50px; 
+    transition: background-color .3s ease;
+   
+}
+nav ul .buton-submeniu:hover{
+    background-color: var(--culoare-rosie);
+}
+nav ul .buton-submeniu a{
+    /* margin: 10px; */
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 auto;
+    align-self: center;
+    overflow: hidden;
+    border-radius: 50px;
+}
+nav .buton-submeniu a:hover{
+    color: var(--culoare-gri);
+}
+nav a {
+    font-weight: bold;
+}

@@ -18,7 +18,15 @@
         <link rel="apple-touch-icon" sizes="180x180"
             href="resurse/imagini/favicon/apple-touch-icon.png">
         <link rel="manifest" href="resurse/imagini/favicon/site.webmanifest">
-        <link rel="stylesheet" type="text/css" href="resurse/css/general.css">
+        <!--CSS LINKS-->
+        <!-- <link rel="stylesheet" type="text/css" href="resurse/css/reset.css"> -->
+        <link rel="stylesheet" type="text/css" href="resurse/css/general.css"> 
+        <link rel="stylesheet" type="text/css" href="resurse/css/tabel.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/nav.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/nav1000.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/nav700.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/pagina-principala.css">
+        <!---->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -34,37 +42,51 @@
     </head>
     <body class="container">
         <header>
-            <h1><a href="#">CyberWare</a></h1>
+            <h1>
+                <a href="#">CyberWare</a>
+            </h1>
+            <div id="hamburger">
+            <span id="hamburger-fa" class="fa-solid fa-bars" style="color: #c7514c;"></span>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#s1">Prima sectiune</a>
+                    <li class="buton-meniu home">
+                        <span id="buton-acasa" class="fa-solid fa-house fa-sm" style="color: #c7514c;"></span>
+                        <a id="anchor-acasa" href="#">Acasa</a>
+                    </li>
+                    <li class="buton-meniu">
+                        <a href="alta_pagina.html">Alta pagina</a>
                         <ul>
-                            <li>
+                            <li class="buton-submeniu">
                                 <a href="#subs1">Subsectiune 1</a>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#s2">A doua sectiune</a>
-                            <ul>
-                                <li>
-                                    <a href="#subs2">Subsectiune 2</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
+                            </li>
+                            <li class="buton-submeniu">
+                                <a href="#subs3">Subsectiune 3</a>
+                            </li>
+                            <li class="buton-submeniu">
+                                <a href="#subs4">Subsectiune 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="buton-meniu">
+                        <a href="#s2">A doua sectiune</a>
+                        <ul>
+                            <li class="buton-submeniu">
+                                <a href="#subs2">Subsectiune 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="buton-meniu">
                             <a href="#img">Imagine</a>
-                        </li>
-                        <li>
-                            <a href="#informatii-utile">Informatii
-                                utile</a>
-                        </li>
-                        <li>
+                    </li>
+                    <li class="buton-meniu">
+                        <a href="#informatii-utile">Informatii utile</a>
+                    </li>
+                    <li class="buton-meniu">
                             <a href="#linkuri-utile">Linkuri utile</a>
-                        </li>
-                    </ul>
+                    </li>
+                </ul>
                 </nav>
+            </div>
             </header>
             <main>
                 <div id="grid-pagina">
