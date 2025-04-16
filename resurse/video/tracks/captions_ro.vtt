@@ -1,0 +1,21 @@
+WEBVTT - subtitrare in romana la freddy fazbear
+
+STYLE
+::cue {
+  color:  #222222;
+  background-color: #c7514d;
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+00:00.000 --> 00:02.600 line:90 position: 50% align: middle
+<c>În curând ursul o să <u>danseze</u>...sunteți pregătiți?<\c>
+
+00:05.000 --> 00:12.900 align:end size:25% position:98% line:0
+<c>El este Freddy Fazbear!</c>
+
+00:07.000 --> 00:12.900 line:90 position: 50% align: middle
+<c>Priviți ce frumos dansează :3 </c>
+

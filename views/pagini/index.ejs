@@ -1,306 +1,437 @@
 <!DOCTYPE html>
-<html  lang="ro">
+<html lang="ro">
     <head>
-        
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
-        <title>Cofetăria Dulcelind</title>
+        <meta name="keywords"
+            content="Componente PC online, Placi video, gaming, Procesoare, Intel, AMD, Memorii RAM, ram, SSD, NVMe, HDD, Placa de baza, Surse alimentare PC, Carcase gaming, Coolere procesoare, Pret componente PC, Configurator PC custom, Placa video nvidia, Placa video amd, Accesorii gaming, Garantie componente PC, Oferta componente PC, Comparatie componente hardware, Kit upgrade PC
+        ">
+        <meta name="description"
+            content="Componente PC la preturi accesibile!">
+        <link rel="stylesheet" type="text/css" href="resurse/css/pagina-principala.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/tabel.css">
         <%- include("../fragmente/head.ejs") %>
-
     </head>
-    <body>
-    <%- include("../fragmente/header.ejs") %> 
-    <main> <!--  comentariu -->
-        <div id="grid-pagina">
-            <section id="welcome">
-                <h2>Bine ati venit</h2>
-                <p class="intro">Vă mulțumim că ne vizitați site-ul. Luați de aici niște biscuiți virtuali. Poftă bună!</p>
-                
-                <div class="intro-oferte"><div>Pateuri</div><div>Bomboane</div><div>Fursecuri</div><div>Prajituri</div><div>Torturi</div></div>
-                <p class="anunt intro">Vă puteți îngrășa atât la sediul nostru cât și la propriul dumneavoastră domiciliu, cu ajutorul ofertei noastre de livrare a produselor prin curier.</p>
-                <div id="dv-prezentare-1">
-                    <div id="dv-prezentare">
-                    <picture>
-                        <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                        <source srcset="/resurse/imagini/macarons-200x200.jpg" media="(max-width:700px)"/>
-                        <source srcset="/resurse/imagini/macarons.jpg" media="(max-width:1200px)"/>
-                        <img src="/resurse/imagini/macarons-640x360.jpg" alt="text"/>
-                    </picture>
-                </div>
-            </div>
-            <hr class="prajituri"/>
-            <div id="container-video">
-                <img class="farfurie" src="/resurse/imagini/farfurie-flori-albastre.png" alt="farfurie">
-                <div id="centrare-video">
-                    <div id="clip-video">
-                        <div id="stil-video">
-                            <video width="320" height="240"  playsinline autoplay loop muted>
-                                <source src="resurse/video/Chocolate.mp4" type="video/mp4">
-                                <source src="resurse/video/Chocolate.ogv" type="video/ogv">
-                                <track default src="data:image/png;base64, V0VCVlRUIC0gQ2lvY29sYXTEgwoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAgbGluZTowCkNpb2NvbGF0xIMhISEKCjAwOjAzLjAwMCAtLT4gMDA6MDcuMDAwIGxpbmU6MApNdWx0xIMgY2lvY29sYXTEgyEhISEKCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwIGxpbmU6MApVcHMsIGFtIG11cmTEg3JpdCBtYXNhIQoKMDA6MTQuNTAwIC0tPiAwMDoxOS4wMDAgbGluZTowCk51IGNvbnRlYXrEgyEgQ2lvY29sYXTEg8SDxIPEg8SDxIMhCgo=" kind="captions" srclang="ro" label="romana">
-                                <track src="data:image/png;base64, V0VCVlRUIC0gQ2hvY29sYXRlDQoNCjAwOjAwLjAwMCAtLT4gMDA6MDMuMDAwDQpDaG9jb2xhdGUhISENCg0KMDA6MDMuMDAwIC0tPiAwMDowNy4wMDANCkxvdHMgb2YgY2hvY29sYXRlISEhIQ0KDQowMDowOS4wMDAgLS0+IDAwOjE0LjAwMA0KT3VwcywgdGFibGUgZ290IGRpcnR5IQ0KDQowMDoxNC41MDAgLS0+IDAwOjE5LjAwMA0KRG9lc24ndCBtYXR0ZXIhIENob2NvbGF0ZSEhIQ0KDQo=" kind="captions" srclang="en" label="engleza">
-                            </video>
+    <body class="container">
+        <p id="watermark"></p>
+        <%- include("../fragmente/header.ejs") %>
+            <main>
+                <div id="grid-pagina">
+                    <section id="prezentare">
+                        <h2>PREZENTARE</h2>
+                        <p>
+                            În era <s>gigital</s><ins> digitală</ins>, a
+                            avea un
+                            PC performant este
+                            esențial pentru orice pasionat de gaming. De
+                            aceea,
+                            poți găsi cele mai bune Componente PC online
+                            pentru a-ți asigura o experiență de neuitat.
+                            Indiferent dacă ești în căutarea unor Placi
+                            video de top sau a unor Procesoare de ultimă
+                            generație, oferta noastră include atât
+                            procesoare
+                            Intel cât și AMD, astfel încât să poți alege
+                            soluția perfectă pentru nevoile tale.
+                        </p>
+                        <p>
+                            Printre elementele cheie se numără și Memorii
+                            RAM
+                            (ram), care, alături de soluțiile de stocare
+                            precum
+                            <i>SSD, NVMe și HDD</i>, îți asigură performanțe
+                            ridicate și timpi de răspuns minimi. Nu putem
+                            uita
+                            nici
+                            importanța unei placi de baza solide, care leagă
+                            toate aceste componente într-un sistem coerent.
+                            Pentru
+                            a-ți completa configurația, găsești și Surse
+                            alimentare PC, Carcase gaming și Coolere
+                            procesoare, care nu doar că optimizează fluxul
+                            de
+                            aer,
+                            dar adaugă și un plus de stil întregului setup.
+                        </p>
+                        <p>
+                            Cu ajutorul <b>Configurator PC custom</b>, poți
+                            personaliza fiecare detaliu, de la alegerea
+                            Placa
+                            video <b>nvidia</b> sau Placa video <b>amd</b>,
+                            până
+                            la
+                            selecția celor mai bune Accesorii gaming.
+                            Totodată, Pret componente PC rămâne competitiv,
+                            iar Garantie componente PC îți oferă siguranța
+                            că investiția ta este protejată. Pentru a face
+                            cea
+                            mai bună alegere, poți consulta și Comparatie
+                            componente hardware și opțiunile din Oferta
+                            componente PC, iar dacă dorești să îți aduci
+                            sistemul la nivelul următor, verifică și Kit
+                            upgrade PC.
+
+                            Descoperă acum toate soluțiile noastre și
+                            transformă-ți pasiunea pentru gaming într-o
+                            experiență de neegalat!</p>
+                    </section>
+                    <section id="tabel">
+                        <div class="container-tabel">
+                            <table class="tabel-procesoare">
+                                <thead>
+                                    <tr>
+                                        <th>Denumire Procesor</th>
+                                        <th>Producator</th>
+                                        <th>Numar Nuclee</th>
+                                        <th>Putere disipata [W]</th>
+                                        <th>Tehnologie de Fabricatie [nm]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>i7 1400K</td>
+                                        <td>Intel</td>
+                                        <td>20</td>
+                                        <td>300</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ryzen 7 7800X3D</td>
+                                        <td>AMD</td>
+                                        <td>8</td>
+                                        <td>120</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>i5 12600K</td>
+                                        <td>Intel</td>
+                                        <td>10</td>
+                                        <td>125</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>i5 14600K</td>
+                                        <td>Intel</td>
+                                        <td>14</td>
+                                        <td>125</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ryzen 5 5600X</td>
+                                        <td rowspan="2">AMD</td>
+                                        <td>6</td>
+                                        <td>65</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ryzen 7 9800X3D</td>
+                                        <td class="nodisplay"></td>
+                                        <td>8</td>
+                                        <td>120</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">Total procesoare sub
+                                            7nm</td>
+                                        <td class="nodisplay"></td>
+                                        <td>2</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
-                    </div>
+                        <p>Cele mai populare procesoare</p>
+                    </section>
+                    <section id="calendar">
+                        <h2>CALENDAR</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam atque aliquid hic, sequi vero dolores,
+                            laborum eius nulla accusamus possimus non molestiae
+                            reiciendis blanditiis libero deserunt unde et quasi!
+                            Quisquam.</p>
+                    </section>
+                    <section id="anunturi">
+                        <h2>ANUNTURI</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam atque aliquid hic, sequi vero dolores,
+                            laborum eius nulla accusamus possimus non molestiae
+                            reiciendis blanditiis libero deserunt unde et quasi!
+                            Quisquam.</p>
+                    </section>
+                    <section id="utilizatori_online">
+                        <h2>UTILIZATORI ONLINE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam atque aliquid hic, sequi vero dolores,
+                            laborum eius nulla accusamus possimus non molestiae
+                            reiciendis blanditiis libero deserunt unde et quasi!
+                            Quisquam.</p>
+                    </section>
+                    <section id="statistici">
+                        <h2>STATISTICI</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam atque aliquid hic, sequi vero dolores,
+                            laborum eius nulla accusamus possimus non molestiae
+                            reiciendis blanditiis libero deserunt unde et quasi!
+                            Quisquam.</p>
+                    </section>
+                    <section id="site-server">
+                        <h2>SITE-SERVER</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam atque aliquid hic, sequi vero dolores,
+                            laborum eius nulla accusamus possimus non molestiae
+                            reiciendis blanditiis libero deserunt unde et quasi!
+                            Quisquam.</p>
+                    </section>
+                    <section id="diverse">
+                        <h2>DIVERSE</h2>
+
+                        <section id="s1">
+                            <h2>Titlu sectiune</h2>
+                            <p class="text">Aceasta este un paragraf</p>
+                            <section id="subs1">
+                                <h3>Subsectiune</h3>
+                                <div class="text">
+                                    <p><strong>Un alt paragraf</strong></p>
+                                    <p>Lorem ipsum dolor sit amet consectetur
+                                        adipisicing
+                                        elit.
+                                        Harum delectus earum sequi, praesentium
+                                        reprehenderit
+                                        quasi, rerum, dicta quas inventore
+                                        perspiciatis
+                                        voluptatibus quaerat. Tempora quia
+                                        beatae ad
+                                        natus.
+                                        Reprehenderit, amet ratione!</p>
+
+                                    <br>
+                                    <q
+                                        cite="https://rightwords.ro/citate/cand-in-sfarsit-ti-ai-cumparat-suficienta-memorie--10644">
+                                        Când în sfârșit ți-ai cumpărat
+                                        suficientă
+                                        memorie,
+                                        constați că nu ai suficient spațiu pe
+                                        disc.
+                                        <cite>-Edward A. Murphy</cite>
+                                    </q>
+                                </div>
+                            </section>
+                        </section>
+                        <section id="s2">
+                            <h2>Titlu sectiune 2</h2>
+                            <p class="text">Aceasta este un paragraf 2</p>
+                            <section id="subs2">
+                                <h3>Titlu subsectiune 2</h3>
+                                <div class="text">
+                                    <blockquote>Lorem ipsum dolor sit amet,
+                                        consectetur
+                                        adipisicing
+                                        elit.
+                                        Perferendis vitae voluptate ex laborum.
+                                        Mollitia,
+                                        maxime
+                                        vel! Est, possimus quaerat aperiam quas
+                                        dolor
+                                        ipsam
+                                        reiciendis, error maiores non fugiat
+                                        iste
+                                        nam.</blockquote>
+                                    <ol>
+                                        <li>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur
+                                            adipisicing
+                                            elit.
+                                        </li>
+                                        <li>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur
+                                            adipisicing
+                                            elit.
+                                        </li>
+                                        <li>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur
+                                            adipisicing
+                                            elit.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </section>
+                        </section>
+                        <section id="img">
+                            <h2>
+                                <span class="fa-solid fa-image fa-bounce fa-xs"
+                                    style="color: #c7514d;"></span>
+                                Sectiunea despre <em>imagine</em>:
+                            </h2>
+                            <p class="text">Iata o imagine!</p>
+                            <figure>
+                                <picture class="imagine">
+                                    <source
+                                        srcset="resurse/imagini/imagine-mare.jpg"
+                                        media="(min-width: 1024px)">
+                                    <source
+                                        srcset="resurse/imagini/imagine-medie.jpg"
+                                        media="(min-width: 768px)">
+                                    <img src="resurse/imagini/imagine-mica.jpg"
+                                        alt="Imagine cu cip">
+                                </picture>
+                                <figcaption>O imagine royalty free cu un cip,
+                                    generata
+                                    cu
+                                    AI</figcaption>
+                            </figure>
+                        </section>
+                        <section id="informatii-utile">
+                            <h2>Informatii utile despre PC-uri</h2>
+                            <details>
+                                <summary>Principalele componente ale unui
+                                    PC</summary>
+                                <p>Acestea sunt ordonate dupa cost</p>
+                                <ol>
+                                    <li>GPU</li>
+                                    <li>CPU</li>
+                                    <li>Motherboard</li>
+                                    <li>PSU</li>
+                                    <li>Cooler</li>
+                                    <li>Stocare</li>
+                                    <li>RAM</li>
+                                    <li>Carcasa</li>
+                                    <li>±Periferice</li>
+                                </ol>
+                            </details>
+                            <details>
+                                <summary>De ce sa alegi un PC custom?</summary>
+                                <ul>
+                                    <li>Un PC custom iti permite sa
+                                        personalizezi
+                                        fiecare
+                                        aspect al sistemului tau, de la procesor
+                                        si
+                                        placa
+                                        video, pana la carcasa si sistemul de
+                                        racire.
+                                        Astfel, poti crea un PC care sa se
+                                        potriveasca
+                                        perfect stilului tau de utilizare.</li>
+                                    <li>
+                                        Un PC custom iti ofera posibilitatea de
+                                        a alege
+                                        fiecare componenta in parte, in functie
+                                        de
+                                        nevoile
+                                        tale.
+                                    </li>
+                                    <li>
+                                        Alegand un PC custom, ai control total
+                                        asupra
+                                        calitatii componentelor. Poti alege
+                                        componente
+                                        de la
+                                        producatori de incredere si poti evita
+                                        piesele
+                                        de
+                                        calitate inferioara care se gasesc
+                                        adesea in
+                                        sistemele preasamblate.
+                                    </li>
+                                    <li>
+                                        Un PC custom iti permite sa economisesti
+                                        bani pe
+                                        termen lung. Desi costul initial poate
+                                        fi mai
+                                        mare,
+                                        vei economisi bani pe termen lung prin
+                                        evitarea
+                                        costurilor de upgrade si reparatii ale
+                                        sistemelor
+                                        preasamblate.
+                                    </li>
+                                </ul>
+                            </details>
+                        </section>
+
+                        <div id="linkuri">
+                            <section id="linkuri-utile">
+                                <h2>Linkuri</h2>
+                                <p>Iata cateva linkuri utile!</p>
+                                <ul id="stilizare-linkuri-etapa4">
+                                    <li>
+                                        <a href="https://www.pcgarage.ro"
+                                            target="_blank">Link
+                                            catre PC Garage</a>
+                                    </li>
+                                    <li>
+                                        <span class="fa-solid fa-download fa-sm"
+                                            style="color: #c7514d;"></span>
+                                        <a
+                                            href="resurse/imagini/imagine-max.jpg"
+                                            download>Descarca imaginea cu cipul
+                                            la rezolutie
+                                            inalta!</a>
+                                    </li>
+                                </ul>
+                                <div class="container-iframe">
+                                    <div id="taburi-iframe">
+                                        <a
+                                            href="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
+                                            target="ifr">Nvidia RTX 5000</a>
+                                        <a
+                                            href="https://www.youtube.com/embed/ELEu8CtEVMQ?si=AKYj0KoLsgrqvm8y"
+                                            target="ifr">DLSS4</a>
+                                    </div>
+                                    <!-- <div id="ifrembed"> -->
+                                    <iframe name="ifr" width="560" height="315"
+                                        src="https://www.youtube.com/embed/yyufZd7W5Kc?si=52mAPDnzI5ljKfcm"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                    <!-- </div> -->
+                                </div>
+                                <div id="pdfembed">
+                                    <embed
+                                        src="resurse/Datasheet_NVIDIA_RTX_A1000.pdf"
+                                        width="500" height="375"
+                                        type="application/pdf"
+                                        id="pdf">
+                                </div>
+                            </section>
+                        </div>
+
+                        <section class="imgmap">
+                            <br>
+                            <h3>Poti apasa pe obiectele din aceasta
+                                imagine!</h3>
+                            <br>
+                            <div class="imgmap">
+                                <img src="resurse/imagini/formap.jpg" alt="map"
+                                    usemap="#map">
+                                <map name="map">
+                                    <area target="_blank" shape="rect"
+                                        coords="34,44,270,350" alt="macbook"
+                                        href="https://istyle.ro/macbook-pro-14-procesor-apple-m4-pro-12-nuclee-cpu-si-16-nuclee-gpu-24gb-512gb-ssd-space-black.html">
+                                    <area shape="rect" coords="290,172,333,250"
+                                        alt="telefon"
+                                        href="https://istyle.ro/iphone-16-pro-512gb-black-titanium.html"
+                                        target="_blank">
+                                    <area target="_blank" shape="circle"
+                                        coords="337,300,44" alt="cafea"
+                                        href="https://ro.wikipedia.org/wiki/Cafea">
+                                </map></div>
+                        </section>
+
+                        <section id="harta">
+                            <h2>Unde ne gasesti:</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884301139307!2d26.097011776949405!3d44.43553547107595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1740932748696!5m2!1sen!2sro"
+                                width="400" height="300" style="border:0;"
+                                allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </section>
+
+                    </section>
                 </div>
-            </div>
-            </section>
-            <section id="promotii">
-                <h2>Promoții</h2>
-                <article>
-                    <h3 class="titlu">Super ofertă de weekend</h3>
-                    <p><b>Cofetăria Dulcelind</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate produsele cumpărate în intervalul 10-14.</p>
-                    <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr title="Cofetăria Dulcelind">CD</abbr>.</p>
-                    <p>în cazul în care cumpărați mai mult de zece <b>prăjituri</b> primiți si un card de fidelitate pentru Salvare!</p>
-                </article>
-                <article>
-                    <h3>Ofertă pachet</h3>
-                    <p>Cofetăria Dulcelind oferă pachete cuprinzând:</p>
-                    <ol>
-                        <li><i lang="en">icecream</i></li>
-                        <li>Un set de 4 pateuri de sortimente diferite</li>
-                        <li>O prajitură la alegere</li>
-                        <li>Un <i>suc</i></li>
-                        <li>Gratis: o farfurioară ornata cu inițiala cofetăriei</li>
-                        <li>Gratis: o felicitare cu imaginea cofetăriei</li>
-                        <li>Gratis: un pui de pisică (am găsit niște pui de pisică abandonați lângă cofetărie și noi nu îi putem păstra. Nu ne reclamați la ANPC, <!--abreviere--> mulțumim de înțelegere!).  </li>
-                    </ol>
-                    
-                </article>
-                <article>
-                    <h3 class="titlu bcd">Promotie 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
-                    <ol>
-                        <li>Suspendisse tempus imperdiet elit in.</li>
-                        <li>Quisque feugiat, mi eget condimentum</li>
-                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
-                        <li>Aenean imperdiet lorem vitae velit porta</li>
-                    </ol>
-                    
-                </article>
-                <article>
-                    <h3>Promotie 4</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
-                    <ol>
-                        <li>Suspendisse tempus imperdiet elit in.</li>
-                        <li>Quisque feugiat, mi eget condimentum</li>
-                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
-                        <li>Aenean imperdiet lorem vitae velit porta</li>
-                    </ol>
-                    
-                </article>
-            </section>
-            <section id="produse">
-                <h2>Produsele noastre</h2>
-
-                <p>Vă oferim o multitudine de metode să câștigați cu succes kilograme în plus.</p>
-                <section>
-                    <h3>Torturi</h3>
-                    <p>În caz că nu le puteți mânca fiindcă sunteți la dietă și doar vă uitați la ele, puneți accentul pe u!</p>
-                    <p>Avem torturi cu:</p>
-                    <ul>
-                        <li>ciocolată</li>
-                        <li>frișcă</li>
-                        <li>fructe</li>
-                        <li>dulceață</li>
-                        <li>înghețată</li>
-                        <li>regrete</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Prăjituri</h3>
-                    <p>Oferim prăjiturile clasice plus câteva creations personnelles, oui!</p>
-                    <p>Prăjituri:</p>
-                    <ul>
-                        <li>savarină</li>
-                        <li>amandină</li>
-                        <li>tartă cu fructe</li>
-                        <li>doboș</li>
-                        <li>carpați (orientali, meridionali și occidentali)</li>
-                        <li>ecler</li>
-                        <li>tiramisu</li>
-                        <li>colivă</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h3>Pateuri</h3>
-                    <p>Pateurile noastre sunt umplute cu:</p>
-                    <ul>
-                        <li>brânză</li>
-                        <li>pizza</li>
-                        <li>spanac</li>
-                        <li>ciuperci</li>
-                        <li>compoziție secretă (sincer, nici noi nu mai știm ce conține)</li>
-                    </ul>
-                </section>
-            </section>
-            <section id="orar">
-                <h2>Orar</h2>
-                <table id="tab-orar">
-                    <thead>
-
-                        <tr>
-                            <th>Cod</th>
-                            <th>Perioadă</th>
-                            <th>Zi</th>
-                            <th>Interval dimineata</th>
-                            <th>Pauza de masa</th>
-                            <th>Interval seară</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td rowspan="5">Zile<br/>Lucrătoare</td>
-                            <td>Luni</td>
-                            <td>10-12</td>
-                            <td>12-14</td>
-                            <td>14-20</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Marti</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Miercuri</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Joi</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Vineri</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-19</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td rowspan="2">Weekend</td>
-                            <td>Sambata</td>
-                            <td>10-12</td>
-                            <td>12-13</td>
-                            <td>13-16</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Duminica</td>
-                            <td>10-14</td>
-                            <td>-</td>
-                            <td>inchis</td>
-                        </tr>
-                    </tbody>
-                </table> 
-            </section>
-            <figure id="fig1" class="fg-img">
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose 1</figcaption>
-            </figure>
-            <figure id="fig2" class="fg-img">
-            <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose 2</figcaption>
-            </figure>
-            <figure  id="fig3" class="fg-img">
-            <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose 3</figcaption>
-            </figure>
-            <section id="anunturi">
-                <h2>Anunțuri</h2> <p><time datetime="2022-01-05">5 ianuarie 2022</time> <strong>No more Covid!!!!</strong></p>
-               
-                <p><time datetime="2020-07-05">5 iulie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-                <p><time datetime="2020-09-15">15 septembrie 2020</time> Am adăugat un fursec nou în meniu</p>
-                <p><time datetime="2020-12-20">20 decembrie 2020</time> Nu avem nimic de anunțat, dar ne era dor de voi.</p>
-                <p><time datetime="2020-12-28">28 decembrie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-                <p><time datetime="2021-01-01">1 ianuarie 2021</time> Un an nou fericit!</p>
-                <p><time datetime="2021-02-11">11 februarie 2021</time> Studiile au arătat că prăjiturile sunt cele mai sănătoase alimente. 
-                    E adevărat că doar studiile noastre, dar astea sunt detalii. </p>
-            </section>
-            <section id="index-intrebari">
-                <h2>Întrebări frecvente</h2>
-                <details><summary>Produsele dumneavoastră provoacă afecțiuni dentare?</summary>
-                    <p>Da!</p>
-                </details>
-                <details><summary>Produsele dumneavoastră provoacă afecțiuni ale sistemului digestiv (precum diabetul)?</summary>
-                    <p>Da!</p>
-                </details>
-                <details><summary>Produsele dumneavoastră provoacă obezitate?</summary>
-                    <p>Foarte! Da!</p>
-                </details>
-                <details><summary>Sunteți cumva asociați cu medicii dentiști, medicii gastroenterologi, companiile farmaceutice și sălile de Fitness?</summary>
-                    <p>Ne rezervăm dreptul de a nu răspunde la această întrebare; mulțumim pentru înțelegere!</p>
-                </details>
-            </section>
-
-        </div>
-        <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="/resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-            
-            </div>
-        </section>
-        <section id="retete">
-            <h2>Retete</h2>
-            <p>Dacă doriți să vă faceți singuri prăjiturile (dar de ce ati face asta când ne aveți pe noi???) 
-                vă recomandăm următoarele rețete simple pe care sperăm să le încercați, să vedeți cât e de <s>ușor</s> să le faceți, 
-                să vă dați în final bătuți și să veniți să cumpărați de la noi &#128512;. Mulțumim! &#128513;</p>
-            <div class="container-iframe">
-                <div class="taburi-iframe">
-                <a href="https://www.youtube.com/embed/qtlhdIfojmc" target="ifr-video">Reteta tort vanilie</a>
-                <a href="https://www.youtube.com/embed/dsJtgmAhFF4" target="ifr-video" >Reteta tort ciocolata</a>
-                <a href="https://www.youtube.com/embed/Wtxbt-CpA2s" target="ifr-video" >Reteta tort căpșuni</a><br/>
-                </div>
-
-            
-                <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/qtlhdIfojmc" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-    </main>
-    <%- include("../fragmente/footer.ejs") %>
-
-    </body>
-</html>
+            </main>
+            <%- include("../fragmente/footer.ejs") %>
+        </body>
+    </html>

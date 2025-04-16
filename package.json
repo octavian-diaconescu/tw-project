@@ -1,0 +1,23 @@
+{
+  "name": "cyberware",
+  "version": "1.0.0",
+  "description": "Magazin online de componente PC",
+  "keywords": [
+    "placi-video",
+    "procesoare",
+    "memorii",
+    "stocare",
+    "componente",
+    "it"
+  ],
+  "license": "ISC",
+  "author": "Diaconescu Octavian-Gabriel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "sharp": "^0.34.1"
+  }
+}
