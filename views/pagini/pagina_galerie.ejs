@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords"
+            content="Componente PC online, Placi video, gaming, Procesoare, Intel, AMD, Memorii RAM, ram, SSD, NVMe, HDD, Placa de baza, Surse alimentare PC, Carcase gaming, galerie statica, galerie dinamica, poze componente
+        ">
+        <meta name="description"
+            content="In oferta noastra... gasesti cele mai bune componente pentru PC-ul tau!">
+        <title>Galerii</title>
+        <!-- <link rel="stylesheet" type="text/css" href="resurse/css/pagina-principala.css">
+        <link rel="stylesheet" type="text/css" href="resurse/css/tabel.css"> -->
+        <link rel="stylesheet" type="text/css" href="/resurse/css/galerii.css">
+        <%- include("../fragmente/head.ejs") %>
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+        <main>
+           <section id="galerie-statica">
+            <h2>Galerie</h2>
+            <div id="grid-galerie">
+                <% 
+                    const oraCurenta = new Date().getHours();
+                    let momentCurent;                
+                    if(oraCurenta > 5 && oraCurenta < 12){
+                        momentCurent = "dimineata";
+                    }
+                    else if(oraCurenta > 12 && oraCurenta < 20){
+                        momentCurent = "zi";
+                    }
+                    else{
+                        momentCurent = "noapte";
+                    }
+                    
+                    let imaginiFiltrate = locals.imagini.filter(imag => imag.timp === momentCurent);
+                    const numarImaginiAfisate = Math.floor(imaginiFiltrate.length / 3) * 3; 
+                    imaginiFiltrate = imaginiFiltrate.slice(0, numarImaginiAfisate);
+                    for (let imag of locals.imagini) {  %>
+                        
+                        <% if (imag.timp && imag.timp === momentCurent) { %>
+                            <figure>
+                            <picture>
+                                <source srcset="<%- imag.fisier_mediu  %>" media="screen and (max-width:1000px)" />
+                                <img alt="Galerie" title="<%= imag.descriere %>" src="<%- imag.fisier  %>" alt="briose">
+                            </picture>
+                            <figcaption><%= imag.descriere%></figcaption>
+                            </figure>
+                        <% } %>
+                <% } %>
+            </div>
+        </section> 
+        </main>
+         <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

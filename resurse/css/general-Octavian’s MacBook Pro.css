@@ -173,6 +173,28 @@ main #stilizare-linkuri-etapa4 a:hover {
     filter: grayscale(100%); 
 }
 
+hr {
+    position: relative;
+    border: none; /* Eliminăm border-ul implicit */
+    height: 3px; /* Grosimea liniei principale */
+    background-color: var(--culoare-rosie); /* Culoarea liniei principale */
+    margin: 20px 0; /* Spațiere sus și jos */
+    width: 80%; /* Lățimea liniei */
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid var(--culoare-rosie); /* Bordura de sus */
+    border-radius: 
+}
+
+hr::after {
+    content: "";
+    position: absolute;
+    width: 10px; /* Dimensiunea curburilor */
+    height: 10px; /* Dimensiunea curburilor */
+    border: 1px solid var(--culoare-rosie); /* Culoarea bordurilor */
+    border-radius: 50%; /* Rotunjim colțurile */
+    top: -5px; /* Poziționăm curburile deasupra liniei */
+}
 
 /* FOOTER */
 footer {
