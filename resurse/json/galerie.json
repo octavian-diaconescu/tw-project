@@ -1,41 +1,95 @@
 {
-	"cale_galerie":"resurse/imagini/galerie",
-	"imagini": [
-		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"timp":"dimineata"
-		},
-		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"timp":"noapte"
-			
-		},
-		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"timp":"noapte"
-		},
-		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			"timp":"noapte"
-		},
-		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată",
-			"timp":"noapte"
-		},
-		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine",
-			"timp":"noapte"
-		},
-		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special",
-			"timp":"noapte"
-		}
-	]
+    "cale_galerie": "resurse/imagini/galerie",
+    "imagini": [
+        {
+            "fisier": "arduino.jpg",
+            "descriere": "Placă Arduino pentru proiecte electronice creative.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "combo.jpg",
+            "descriere": "Set complet de periferice pentru birou sau gaming.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "desktop.jpg",
+            "descriere": "Sistem desktop performant pentru gaming și productivitate.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "laptop.jpg",
+            "descriere": "Laptop modern, ideal pentru muncă și divertisment.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "pc.jpg",
+            "descriere": "Unitate PC personalizată pentru performanță maximă.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "pcb.jpg",
+            "descriere": "Placă de circuit imprimat pentru proiecte electronice.",
+            "timp": "dimineata"
+        },
+        {
+            "fisier": "pcb2.jpg",
+            "descriere": "Placă de circuit avansată pentru aplicații complexe.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "retele.jpg",
+            "descriere": "Echipamente de rețea pentru conexiuni rapide și stabile.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "retele2.jpg",
+            "descriere": "Router performant pentru rețele de mare viteză.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "retele3.jpg",
+            "descriere": "Switch de rețea pentru gestionarea mai multor dispozitive.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "robot.jpg",
+            "descriere": "Robot programabil pentru aplicații educaționale.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "cod.jpg",
+            "descriere": "Cod sursă pentru dezvoltarea aplicațiilor software.",
+            "timp": "zi"
+        },
+        {
+            "fisier": "hacker.jpg",
+            "descriere": "Imagine simbolică a unui hacker în acțiune.",
+            "timp": "noapte"
+        },
+        {
+            "fisier": "html.jpg",
+            "descriere": "Cod HTML pentru dezvoltarea paginilor web.",
+            "timp": "noapte"
+        },
+        {
+            "fisier": "matrix.jpg",
+            "descriere": "Ecran inspirat din filmul Matrix, simbolizând codul digital.",
+            "timp": "noapte"
+        },
+        {
+            "fisier": "laptop2.jpg",
+            "descriere": "Laptop performant pentru utilizare nocturnă.",
+            "timp": "noapte"
+        },
+        {
+            "fisier": "laptop3.jpg",
+            "descriere": "Laptop compact pentru mobilitate și eficiență.",
+            "timp": "noapte"
+        },
+        {
+            "fisier": "pcb3.jpg",
+            "descriere": "Placă de circuit imprimat utilizată în proiecte avansate.",
+            "timp": "noapte"
+        }
+    ]
 }

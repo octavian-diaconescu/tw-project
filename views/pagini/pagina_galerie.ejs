@@ -48,6 +48,35 @@
                 <% } %>
             </div>
         </section> 
+        <section id="galerie-animata">
+            <% 
+            const numarImagini = (() => {
+                let n;
+                do {
+                    n = Math.floor(Math.random() * 5) + 7;
+                } while (n === 10);
+                return n;
+            })();
+
+            const imaginiDisponibile = [...locals.imagini];
+            const imaginiSelectate = [];
+
+            while (imaginiSelectate.length < numarImagini) {
+                const indexAleator = Math.floor(Math.random() * imaginiDisponibile.length);
+                imaginiSelectate.push(imaginiDisponibile.splice(indexAleator, 1)[0]);
+            }
+
+            imaginiSelectate.forEach(imag => { 
+        %>
+            <figure>
+                <picture>
+                    <source srcset="<%- imag.fisier_mediu %>" media="screen and (max-width:1000px)" />
+                    <img loading="eager" alt="Galerie Animată" title="<%= imag.descriere %>" src="<%- imag.fisier %>" />
+                </picture>
+                <figcaption><%= imag.descriere %></figcaption>
+            </figure>
+        <% }) %>
+        </section>
         </main>
          <%- include("../fragmente/footer.ejs") %>
     </body>

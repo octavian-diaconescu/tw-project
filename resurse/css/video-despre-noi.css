@@ -1,10 +1,48 @@
+#fgvid, header, p{
+    position: relative;
+    z-index: 1;
+}
 p{
     margin: 0 auto;
     padding: 0;
     padding-top: 20px;
     text-align: center;
 }
-video{
+#text-animat {
+    margin: 0 auto;
+    position: relative;
+    width: 20%; 
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: var(--culoare-rosie);
+    font-size: 1.5rem; 
+    padding: 10px 0;
+}
+
+#text-animat p {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: slide-horizontal 2s linear infinite;
+}
+
+@keyframes slide-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+#bgvid {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#fgvid{
     margin: 4rem auto;
     margin-top: 15px;
     display: block;
