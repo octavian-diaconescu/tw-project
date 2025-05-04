@@ -48,6 +48,7 @@
                 <% } %>
             </div>
         </section> 
+        <h2>Galerie animata</h2>
         <section id="galerie-animata">
             <% 
             const numarImagini = (() => {
@@ -57,7 +58,7 @@
                 } while (n === 10);
                 return n;
             })();
-
+           
             const imaginiDisponibile = [...locals.imagini];
             const imaginiSelectate = [];
 

@@ -9,7 +9,7 @@
     --culoare-gri: rgb(234, 234, 234);
 }
 
-.container {
+.Container {
     /* max-width: 1800px; */
     margin: 0 auto;
     padding-left: var(--padding-large);

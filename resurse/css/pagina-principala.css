@@ -193,8 +193,10 @@ figure {
     overflow:hidden;
     box-sizing: border-box;
     clip-path: inset(32px 0 0 0);
+    /* border: 1px solid white; */
 }
-hr {
+
+.styled-hr {
     margin: 39px auto;
     overflow: visible;
     height: 10px;
@@ -202,7 +204,7 @@ hr {
     border-radius: 50px;
 }
 
-hr:before {
+.styled-hr:before {
     margin-left: -3px;
     display: block;
     content: "";

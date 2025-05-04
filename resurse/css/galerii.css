@@ -1,3 +1,6 @@
+#galerie-statica{
+    margin-bottom: 70px;
+}
 #galerie-statica #grid-galerie{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7,7 +10,9 @@
 
 #galerie-statica figure{
     align-items: center;
-    margin: 0;
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
     transition: transform 0.2s ease, border-radius 0.5s ease;
 }
 #galerie-statica figure img{
@@ -36,66 +41,82 @@
     margin: 2rem auto;
     overflow: hidden;
     margin-bottom: 100px;
+    border: 10px solid transparent;
     border-image: url("../imagini/galerie/border.jpg") 30;
 }
-
 #galerie-animata figure {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
+    position: relative;
     transform-origin: center left;
     animation: animatieGalerie 20s infinite ease;
 }
+#galerie-animata figcaption{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--culoare-rosie);
+}
 
 #galerie-animata figure:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 20s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: 18s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(3) {
-    animation-delay: 4s;
+    animation-delay: 16s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(4) {
-    animation-delay: 6s;
+    animation-delay: 14s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(5) {
-    animation-delay: 8s;
+    animation-delay: 12s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(6) {
     animation-delay: 10s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(7) {
-    animation-delay: 12s;
+    animation-delay: 8s; 
+    position: absolute;
 }
 #galerie-animata figure:nth-child(8) {
-    animation-delay: 14s;
+    animation-delay: 6s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(9) {
-    animation-delay: 16s;
+    animation-delay: 4s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(10) {
-    animation-delay: 18s;
+    animation-delay: 2s;
+    position: absolute;
 }
 #galerie-animata figure:nth-child(11) {
-    animation-delay: 20s;
+    animation-delay: 0s;
+    position: absolute;
 }
 
 #galerie-animata img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+
+#galerie-animata:hover figure {
+    animation-play-state: paused;
 }
 
 @keyframes animatieGalerie {
     0% {
         opacity: 1;
         transform: scaleY(1) rotate(0deg);
-        /* z-index: 2; */
     }
     3% {
         opacity: 1;
@@ -112,10 +133,17 @@
     10% {
         opacity: 0;
         transform: scaleY(0.7) rotate(120deg); 
-        /* z-index: 1; */
     }
     15% {
         opacity: 0;
+    }
+    93%{
+        opacity: 0;
+        transform: scaleY(1) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1) rotate(0deg);
     }
 }
 
