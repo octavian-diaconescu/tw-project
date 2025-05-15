@@ -10,10 +10,11 @@
         <link rel="stylesheet" type="text/css" href="resurse/css/tabel.css">
         <%- include("../fragmente/head.ejs") %>
     </head>
-    <body class="Container">
+    <body class="Container light-theme">
         <p id="watermark"></p>
         <%- include("../fragmente/header.ejs") %>
             <main>
+                <p style="margin-top: 20px; margin-bottom: 0"><b>Ip: </b><%- locals.ip %></p>
                 <div id="grid-pagina">
                     <section id="prezentare">
                         <h2>PREZENTARE</h2>
@@ -419,9 +420,9 @@
                                         href="https://ro.wikipedia.org/wiki/Cafea">
                                 </map></div>
                         </section>
-                        <div id="stilizare-hr">
+                        <!-- <div id="stilizare-hr">
                             <hr class="styled-hr">
-                        </div>
+                        </div> -->
     
                         <section id="div-duotone">
                             <h2>Task duotone etapa 5</h2>

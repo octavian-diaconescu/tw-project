@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cyberware ofera produse IT cu livrare gratuita prin curier.">
+        <meta name="keywords" content="produse, componente, it, hardware, software, gaming, laptopuri, desktopuri, monitoare, periferice">
+        <%- include("../fragmente/head") %> 
+        <link rel="stylesheet" href="../resurse/css/produse.css" type="text/css" />
+        <title>Cyberware</title>
+            
+        <script type="text/javascript" src=../resurse/js/produse.js></script>
+        <script type="text/javascript" src=../resurse/js/produse-cos.js></script>
+    </head>
+    <body>
+
+
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <div class="container" style="margin-top: 15px; padding-left: 13%; padding-right: 14%;">
+            <div class="row">
+                <div class="col-12">
+                    <h2 style="padding-left: 325px;">Produse</h2>
+                <div class="form-floating" style="margin-top: 25px; margin-bottom: 10px; width: 100%;">
+                    <textarea class="form-control" placeholder="Numele produsului" id="inp-nume"></textarea>
+                    <label for="inp-nume">Nume</label>
+                </div>
+            </div>
+            </div>
+                <!-- <label style="margin-top: 25px"> Nume: <input type="text" id="inp-nume" class="form-control" placeholder="Numele produsului" required="" autofocus=""></label> -->
+                <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+                
+                <div> Pret:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                    <div class="row">
+                    <div class="col-md-auto">
+                    <p>
+                         <input class="btn-check" autocomplete="off" id="i_rad1" value="0:1000" type="checkbox" autocomplete="off">
+                         <label class="btn btn-outline-primary btn-sm text-secondary fs-6" for="i_rad1">Eftin (pret &lt; 1000)</label>
+                    </p>
+                    </div>
+                    <div class="col-md-auto">
+                    <p>
+                        <input class="btn-check" id="i_rad2" value="1000:5000" type="checkbox" autocomplete="off">
+                        <label class="btn btn-outline-primary btn-sm text-secondary fs-6" for="i_rad2">Asa si asa (1000 &le; pret &lt; 5000)</label>   
+                    </p>
+                    </div>
+                    <div class="col-md-auto">
+                    <p>
+                        <input class="btn-check" id="i_rad3" value="5000:1000000000" type="checkbox" autocomplete="off"/>
+                        <label class="btn btn-outline-primary btn-sm text-secondary fs-6" for="i_rad3">Bogatie (5000 &le; pret)</label>
+                        
+                    </p>
+                    </div>
+                    <div class="col-md-auto">
+                    <p>
+                        <input class="btn-check" id="i_rad4" checked value="toate" type="checkbox" autocomplete="off"/>
+                        <label class="btn btn-outline-primary btn-sm text-secondary fs-6" for="i_rad4">Toate</label>
+                    </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <!-- <label> Pret minim: <span style="margin-right: 5px;">0</span> -->
+        <div class="range-pm" style="max-width: 10%">
+            <label for="inp-pret" class="form-label">Pret minin:</label>
+            <span style="margin-right: 5px; display: block;">0</span>
+            <input type="range" id="inp-pret" value="0" min="0"  max="12000" class="form-range">
+            <span style="margin-left:5px;">12000</span> 
+            <span id="infoRange">(0)</span>
+        </div>
+        <label>Subcategorie:</label>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-toate" value="toate" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="subcat-toate">Toate</label>
+        <% for(let opt of locals.optiuniSubcategorie){ %>
+            <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-<%- opt.subcategorie %>" value="<%- opt.subcategorie.toLowerCase() %>" autocomplete="off">
+            <label class="btn btn-outline-primary" for="subcat-<%- opt.subcategorie %>"><%- opt.subcategorie %></label>
+        <% } %>
+    </div>
+
+        <p style="margin-top: 15px">
+        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="filtrare"> <i class="bi bi-funnel"></i> <span>Filtreaza</span></button> 
+        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="resetare"><i class="bi bi-arrow-clockwise"></i> <span>Reseteaza</span></button>
+        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="sortCrescNume"><i class="bi bi-sort-alpha-down"></i> <span>Sortează crescator dupa pret si nume</span></button>
+        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="sortDescrescNume"> <i class="bi bi-sort-alpha-up"></i><span>Sorteaza descrescator dupa pret si nume</span></button>
+        
+        </p>
+      
+        <!-- <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p> -->
+        <button type="button" class="btn btn-primary text-secondary" id="btn-suma">Calculeaza suma preturilor afiste</button>
+  
+        <section id="produse">
+
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" id="produs_<%-prod.id %>">
+                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <div class="desc_imag">
+                            <p class="descriere">Descriere: <span class="val-descriere"><%- prod.descriere%></span></p>
+                            <figure>
+                                <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+                        </div>
+                        <div class="info-prod">
+                            <ul>
+                            <li>
+                                <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                            </li>
+                            <li>
+                                <p class="subcategorie">Subcategorie: <span class="val-subcategorie"><%- prod.subcategorie%></span></p>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary style="font-weight: bold;">Specificatii</summary>
+                                    <ul>
+                                            <% if (prod.specificatii) { 
+                                            let specs = prod.specificatii.split(","); 
+                                            for (let spec of specs) { %>
+                                                <li><%= spec.trim() %></li>
+                                        <%  } 
+                                        } %>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <p style="display:inline-block;">Data adaugare: </p>
+                            <% 
+                                function formatDataRo(dataSql) {
+                                    if (!dataSql) return "";
+                                    const luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                                    const zile = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+                                    const d = new Date(dataSql);
+                                    return `${zile[d.getDay()]}, ${d.getDate()}-${luni[d.getMonth()]}-${d.getFullYear()}`;
+                                }
+                            %>
+                            <time datetime="<%- prod.data_adaugare %>"><%= formatDataRo(prod.data_adaugare) %></time>
+                            </li>
+                            <li>
+                               <p class="livrare">Livrare Easybox: <span class="val-livrare"><%- prod.livrare_easybox ? "Da" : "Nu" %></span></p> 
+                            </li>
+
+                            
+                        </ul>
+                        </div>
+                        
+                        
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

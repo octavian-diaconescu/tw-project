@@ -1,27 +1,22 @@
 @use '../../node_modules/bootstrap/scss/bootstrap.scss' with (
     $primary: #c7514d, 
-    $secondary: #222222,
-    $body-bg: rgb(26, 26, 26) , 
+    $secondary: #eaeaea,
+    $body-bg: rgb(26, 26, 26), 
     $body-color: #eaeaea, 
     $font-family-base: 'Comfortaa',
     $font-size-base: 1.1rem,
-    // $border-radius: 12px, 
+    $border-radius: 6px, 
     $h1-font-size: 2.5rem, 
     $h2-font-size: 2rem,
     $h3-font-size: 1.75rem,
     $btn-padding-y: 0.75rem, 
-    $btn-padding-x: 1.5rem, 
+    $btn-padding-x: 1.1rem,
+    $btn-border-width: 3px,
+    $form-range-track-bg: #c7514d,
+    $form-range-thumb-bg: #eaeaea,
+    $form-range-thumb-width: 1.5rem
 );
 
-.theme-light {
-    background-color: #ffffff; 
-    color: #333333;
-}
-
-.theme-dark {
-    background-color: #222222;
-    color: rgb(234, 234, 234); 
-}
 
 body{
     margin: 0 auto;
@@ -52,6 +47,9 @@ h2{
         margin: 0 auto;
         text-align: center;
         padding-left: 16px;
+    }
+    button.btn span {
+        display: none;
     }
 }
 

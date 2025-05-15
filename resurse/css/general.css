@@ -4,9 +4,11 @@
     --padding-medium: 30px;
     --padding-small: 15px;
     --padding-text: 20px;
-    --culoare-rosie: rgb(199, 81, 77);
+    --culoare-rosie: #c7514d;
     --culoare-neagra: rgb(34, 34, 34);
     --culoare-gri: rgb(234, 234, 234);
+    --culoare-alb-white-theme: #fdfbec;
+    --culoare-text-white-theme: #962b27;
 }
 
 .Container {
@@ -73,13 +75,27 @@ h2{
 /* BODY */
 
 body {
-
-    background-color: rgb(26, 26, 26);
-    color: var(--culoare-gri);
+    background-color: var(--culoare-alb-white-theme);
+    color: #000000;
     margin: 5px;
     overflow-x: hidden;
+    transition: background-color .3s, color .3s;
 }
-
+body.light-theme{
+    background-color: #ddeef7;
+    color: var(--culoare-neagra);
+}
+body.light-theme header, body.light-theme footer{
+    background-color: var(--culoare-alb-white-theme);
+    color: var(--culoare-text-white-theme);
+}
+body.light-theme header nav a{
+    color: rgb(186, 6, 6);
+}
+body.dark-theme{
+    background-color: #1a1a1a;
+    color: var(--culoare-gri);
+}
 a:hover {
     color: var(--culoare-rosie);
 }

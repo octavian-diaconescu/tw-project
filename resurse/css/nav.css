@@ -12,17 +12,14 @@ nav ul {
   margin: 0;
   display: flex;
 }
-
 nav ul li {
   position: relative;
   margin-right: 20px;
 }
-
 nav ul li a {
   text-decoration: none;
   color: var(--culoare-gri);
 }
-
 nav ul .buton-meniu {
   position: relative;
   border: 1px solid var(--culoare-rosie);
@@ -30,14 +27,12 @@ nav ul .buton-meniu {
   border-radius: 50px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
 nav ul .buton-meniu > a {
   margin: 0;
   position: relative;
   color: var(--culoare-gri);
   z-index: 1;
 }
-
 nav ul .buton-meniu::after {
   content: "";
   width: 0;
@@ -54,16 +49,13 @@ nav ul .buton-meniu::after {
   transform-origin: center;
   transition: width 0.3s ease-out, height 0.3s ease-out;
 }
-
 nav ul .buton-meniu:hover::after {
   width: 100%;
   height: 100%;
 }
-
 nav ul .buton-meniu:hover ul {
   transform: scale(1);
 }
-
 nav ul .buton-meniu ul {
   display: flex;
   flex-wrap: wrap;
@@ -77,7 +69,6 @@ nav ul .buton-meniu ul {
   transform-origin: left top;
   transition: transform 0.4s ease;
 }
-
 nav ul .buton-submeniu {
   position: relative;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -92,11 +83,9 @@ nav ul .buton-submeniu {
   border-radius: 50px;
   transition: background-color 0.3s ease;
 }
-
 nav ul .buton-submeniu:hover {
   background-color: var(--culoare-rosie);
 }
-
 nav ul .buton-submeniu a {
   padding: 5px;
   font-size: 15px;
@@ -106,7 +95,6 @@ nav ul .buton-submeniu a {
   overflow: hidden;
   border-radius: 50px;
 }
-
 nav ul ul {
   display: none;
   position: absolute;
@@ -115,12 +103,9 @@ nav ul ul {
   padding: 0.7em;
   list-style: none;
 }
-
 nav .buton-submeniu a:hover {
   color: var(--culoare-gri);
 }
-
 nav a {
   font-weight: bold;
 }
-

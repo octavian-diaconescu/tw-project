@@ -3,6 +3,27 @@ const path = require("path");
 const fs = require("fs");
 const sharp = require("sharp");
 const sass = require("sass");
+const pg = require("pg");
+
+const Client=pg.Client;
+
+client=new Client({
+    database:"proiect",
+    user:"doctavian",
+    password:"parola",
+    host:"localhost",
+    port:5432,
+})
+
+client.connect()
+client.query("select * from produse", function(err, rezultat){
+    console.log(err)    
+    console.log("Rezultat query:", rezultat)
+})
+client.query("select * from unnest(enum_range(null::categorie_mare))", function(err, rezultat ){
+    console.log(err)    
+    console.log(rezultat)
+})
 
 app = express();
 
@@ -22,9 +43,15 @@ obGlobal = {
     obImagini: null,
     folderScss: path.join(__dirname, "resurse/scss"),
     folderCss: path.join(__dirname, "resurse/css"),
-    folderBackup: path.join(__dirname, "backup")
+    folderBackup: path.join(__dirname, "backup"),
+    optiuniMeniu: null
 }
 
+client.query("select * from unnest(enum_range(null::categorie_mare))", function(err, rezultat ){
+    console.log(err)    
+    console.log("Tipuri produse:", rezultat)
+    obGlobal.optiuniMeniu=rezultat.rows
+})
 
 vect_foldere = ["temp", "backup", "temp1"]
 for (let folder of vect_foldere) {
@@ -56,12 +83,12 @@ function compileazaScss(caleScss, caleCss) {
 
     // la acest punct avem cai absolute in caleScss si  caleCss
 
-    let numeFisCss = path.basename(caleCss);
-    if (fs.existsSync(caleCss)) {
-        let timestamp = Date.now();
-        let numeFisCssBackup = numeFisCss.replace(".css",  `_${timestamp}.css`);
-        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCssBackup))// +(new Date()).getTime()
-    }
+    // let numeFisCss = path.basename(caleCss);
+    // if (fs.existsSync(caleCss)) {
+    //     let timestamp = Date.now();
+    //     let numeFisCssBackup = numeFisCss.replace(".css",  `_${timestamp}.css`);
+    //     fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCssBackup))// +(new Date()).getTime()
+    // }
 
     rez = sass.compile(caleScss, { "sourceMap": true });
     fs.writeFileSync(caleCss, rez.css)
@@ -186,7 +213,10 @@ function afisareEroare(res, identificator, titlu, text, imagine) {
 
 }
 
-
+app.use("/*", function(req, res, next){
+    res.locals.optiuniMeniu=obGlobal.optiuniMeniu;
+    next();
+})
 
 app.use("/resurse", express.static(path.join(__dirname, "resurse")))
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")))
@@ -238,6 +268,65 @@ app.get("/abc", function (req, res, next) {
 })
 
 
+app.get("/produse", function(req, res){
+    console.log(req.query)
+    var conditieQuery=""; // TO DO where din parametri
+    if (req.query.tip){
+        conditieQuery=` where categorie='${req.query.tip}'`
+    }
+
+    // Query for categorie (main category)
+    let queryOptiuni = "select * from unnest(enum_range(null::categorie_mare))";
+    // Query for subcategorie (distinct subcategorie from produse)
+    let queryOptiuniSubcategorie = "select distinct subcategorie from produse order by subcategorie";
+
+    client.query(queryOptiuni, function(err, rezOptiuni){
+        if (err) {
+            console.log(err);
+            afisareEroare(res, 2);
+            return;
+        }
+        client.query(queryOptiuniSubcategorie, function(err, rezOptiuniSubcategorie){
+            if (err) {
+                console.log(err);
+                afisareEroare(res, 2);
+                return;
+            }
+            let queryProduse = "select * from produse" + conditieQuery;
+            client.query(queryProduse, function(err, rez){
+                if (err){
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else{
+                    res.render("pagini/produse", {
+                        produse: rez.rows,
+                        optiuni: rezOptiuni.rows,
+                        optiuniSubcategorie: rezOptiuniSubcategorie.rows 
+                    })
+                }
+            })
+        });
+    });
+});
+
+app.get("/produs/:id", function(req, res){
+    console.log(req.params)
+    client.query(`select * from produse where id=${req.params.id}`, function(err, rez){
+        if (err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else{
+            if (rez.rowCount==0){
+                afisareEroare(res, 404);
+            }
+            else{
+                res.render("pagini/produs", {prod: rez.rows[0]})
+            }
+        }
+    })
+})
 
 app.get(/^\/resurse\/[a-zA-Z0-9_\/]*$/, function (req, res, next) {
     afisareEroare(res, 403);
@@ -279,6 +368,7 @@ app.get("/*", function (req, res, next) {
 
 
 app.listen(8080);
+
 console.log("Serverul a pornit")
 
 
