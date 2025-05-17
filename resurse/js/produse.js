@@ -8,28 +8,24 @@ window.onload = function () {
     btn = document.getElementById("filtrare");
     multiple_select();
     btn.onclick = function () {
-        if (!validateInputs()) {
-            return;
-        }
-        let inpNume = document.getElementById("inp-nume").value.trim().toLowerCase()
+        let inpNume= document.getElementById("inp-nume").value.trim().toLowerCase()
+        const txtArea= document.getElementById("inp-txtarea"); 
+        const descFilterRaw= txtArea ? txtArea.value.trim().toLowerCase() : "";
+        const isKeywordSearch= descFilterRaw.includes('+') || descFilterRaw.includes('-');
 
-        let isKeywordSearch = inpNume.includes('+') || inpNume.includes('-');
-        let keywordsStr = inpNume.toLowerCase();
-        let plusKeywords = [], minusKeywords = [];
+        const plusKeywords= [];
+        const minusKeywords= [];
         if (isKeywordSearch) {
-            keywordsStr.split(/\s+/).forEach(word => {
-                if (word.startsWith('+')) {
-                    let keyword = word.slice(1);
-                    if (keyword) plusKeywords.push(keyword);
-                }
-                else if (word.startsWith('-')) {
-                    let keyword = word.slice(1);
-                    if (keyword) minusKeywords.push(keyword);
-                }
+            descFilterRaw.split(/\s+/).forEach(w => {
+            if (w.startsWith('+') && w.length > 1) plusKeywords.push(w.slice(1));
+            else if (w.startsWith('-') && w.length > 1) minusKeywords.push(w.slice(1));
             });
         }
 
-
+        if (!validateInputs()) {
+            return;
+        }
+        
         let vectRadio = document.getElementsByName("gr_rad")
 
         let inpCalorii = null
@@ -50,34 +46,21 @@ window.onload = function () {
         let inpPret = document.getElementById("inp-pret").value
         let inpSubCategorie = document.querySelector('input[name="subcategorie"]:checked').value.trim().toLowerCase();
 
+        
         let produse = document.getElementsByClassName("produs")
         for (let prod of produse) {
             prod.style.display = "none";
             let nume = prod.getElementsByClassName("val-nume")[0].innerHTML.trim().toLowerCase()
-            let cond1 = !isKeywordSearch && nume.startsWith(inpNume)
-
-            let descriere = prod.getElementsByClassName("val-descriere")[0].innerHTML.trim().toLowerCase();
-
-            let hasPositiveMatch = isKeywordSearch && (plusKeywords.length === 0 || plusKeywords.some(keyword => descriere.includes(keyword)));
-            let hasNoNegativeMatch = isKeywordSearch && minusKeywords.every(keyword => !descriere.includes(keyword));
-
-            if (isKeywordSearch && hasPositiveMatch && hasNoNegativeMatch) {
-                prod.style.display = "block";
-            }
-
-            // let calorii=parseInt(prod.getElementsByClassName("val-calorii")[0].innerHTML.trim())
-
-            // let cond2= (inpCalorii=="toate" || (minCalorii<=calorii && calorii<maxCalorii) )
+            let cond1 = nume.includes(inpNume)
 
             let pret = parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML.trim())
-            let cond2 = true;  // default value if "toate" is selected
+            let cond2 = true;
 
             let checkedRanges = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
 
             if (checkedRanges.length === 0 || checkedRanges.some(r => r.value === "toate")) {
                 cond2 = true;
             } else {
-                // Check if price falls within any of the selected ranges
                 cond2 = checkedRanges.some(range => {
                     if (range.value === "toate") return true;
                     let [pretMin, pretMax] = range.value.split(":").map(Number);
@@ -90,14 +73,21 @@ window.onload = function () {
             let subcategorie = prod.getElementsByClassName("val-subcategorie")[0].innerHTML.trim().toLowerCase()
             let cond4 = (inpSubCategorie == "toate" || inpSubCategorie == subcategorie)
 
-            if (cond1 && cond2 && cond3 && cond4) {
+            let descriereText = prod.getElementsByClassName("val-descriere")[0].innerHTML.trim().toLowerCase();
+            let cond5 = true;
+            if (isKeywordSearch) {
+                cond5 = plusKeywords.every(k => descriereText.includes(k)) &&
+                        minusKeywords.every(k => !descriereText.includes(k));
+            }
+
+            if (cond1 && cond2 && cond3 && cond4 && cond5) {
                 prod.style.display = "block";
             }
         }
 
     }
 
-    document.getElementById("inp-pret").oninput = function () {
+        document.getElementById("inp-pret").oninput = function () {
         document.getElementById("infoRange").innerHTML = `(${this.value})`;
         if (this.value < 0 || this.value > 12000) {
             this.classList.add("is-invalid");
@@ -110,10 +100,17 @@ window.onload = function () {
 
     document.getElementById("resetare").onclick = function () {
         document.getElementById("inp-nume").value = ""
+        document.getElementById("inp-txtarea").value = ""
+        document.getElementById("inp-nume").classList.remove("is-invalid");
+        document.getElementById("inp-nume").classList.remove("is-valid");
+        document.getElementById("inp-nume").focus();
 
         if (confirm("Sunteti siguri ca vreti sa resetati toate filtrele?")) {
             document.getElementById("i_rad4").checked = true;
             document.getElementById("subcat-toate").checked = true;
+            document.getElementById("inp-pret").value = 0;
+            document.getElementById("infoRange").innerHTML = "(0)";
+
             document.querySelectorAll('.row input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = checkbox.value === "toate";
             });
@@ -201,49 +198,7 @@ window.onload = function () {
             }
         }
         
-    // window.onkeydown = function (e) {
-    //     console.log(e)
-    //     if (e.key == "c" && (e.altKey || e.metaKey)) {
-    //         if (!validateInputs()) {
-    //             return;
-    //         }
-    //         let produse = document.getElementsByClassName("produs")
-    //         sumaPreturi = 0
-    //         for (let prod of produse) {
-    //             if (prod.style.display != "none") {
-    //                 let pret = parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML.trim())
-    //                 sumaPreturi += pret
-    //             }
-    //         }
-    //         if (!document.getElementById("suma_preturi")) {
-    //             let divRezultat = document.createElement("div");
-    //             divRezultat.id = "calcule_preturi";
-    //             divRezultat.style.cssText = `
-    //             position: fixed;
-    //             top: 50px;
-    //             left: 20px;
-    //             background-color: var(--culoare-rosie);
-    //             color: var(--culoare-gri);
-    //             padding: 15px;
-    //             border-radius: 10px;
-    //             box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    //             z-index: 1000;
-    //         `;
-    //             divRezultat.innerHTML = `
-    //             <p>Suma totală: ${sumaPreturi.toFixed(2)} RON</p>   
-    //         `;
-
-    //             document.body.appendChild(divRezultat);
-
-    //             setTimeout(function () {
-    //                 let div = document.getElementById("calcule_preturi");
-    //                 if (div) {
-    //                     div.remove();
-    //                 }
-    //             }, 2000);
-    //         }
-    //     }
-    // }
+  
     document.getElementById("inp-nume").oninput = function () {
         // validateInputs();
         if (this.value.trim().length < 3) {
@@ -260,25 +215,51 @@ window.onload = function () {
 
 function validateInputs() {
     let isValid = true;
-    // let inpNume = document.getElementById("inp-nume");
-    let inpPret = document.getElementById("inp-pret");
-    let errorDiv = document.getElementById("error-messages") || createErrorDiv();
+    const inpNume = document.getElementById("inp-nume");
+    const inpTxtarea = document.getElementById("inp-txtarea");
+    const inpPret = document.getElementById("inp-pret");
+    let errorDiv = document.getElementById("error-messages");
 
 
-    errorDiv.innerHTML = "";
+    if (errorDiv) errorDiv.innerHTML = "";
 
-    // if (inpNume.value.trim().length < 3) {
-    //     isValid = false;
-    //     if(!errorDiv) {
-    //         errorDiv = createErrorDiv();
-    //     }
-    //     appendError(errorDiv, "Numele trebuie sa contina minim 3 caractere");
-    //     inpNume.classList.add("is-invalid");
-    //     inpNume.classList.remove("is-valid");
-    // } else {
-    //     inpNume.classList.remove("is-invalid");
-    //     inpNume.classList.add("is-valid");
-    // }
+    if(inpNume.value.length) {
+        if (/[\+-.,!?]/.test(inpNume.value)) {
+            isValid = false;
+            if (!errorDiv) {
+                errorDiv = createErrorDiv();
+            }
+
+            appendError(errorDiv, "Numele nu trebuie sa contina simboluri precum + - . , ! ?");
+            inpNume.classList.add("is-invalid");
+            inpNume.classList.remove("is-valid");
+        } else {
+            inpNume.classList.remove("is-invalid");
+            inpNume.classList.add("is-valid");
+        }
+        if (inpNume.value.length < 3) {
+            isValid = false;
+            if (!errorDiv) {
+                errorDiv = createErrorDiv();
+            }
+            appendError(errorDiv, "Numele trebuie sa aiba minim 3 caractere.");
+            inpNume.classList.add("is-invalid");
+            inpNume.classList.remove("is-valid");
+        } else {
+            inpNume.classList.remove("is-invalid");
+            inpNume.classList.add("is-valid");
+        }
+    }
+    
+
+    const txtValue = inpTxtarea.value.trim();
+    if (txtValue.length > 0 && !txtValue.includes("+") && !txtValue.includes("-")) {
+        isValid = false;
+        if(!errorDiv) {
+            errorDiv = createErrorDiv();
+        }
+        appendError(errorDiv, "Textarea trebuie să conțină '+' sau '-' pentru filtrare avansată.");
+    } 
 
     if (inpPret.value < 0 || inpPret.value > 12000) {
         isValid = false;
@@ -291,11 +272,11 @@ function validateInputs() {
     } else {
         inpPret.classList.remove("is-invalid");
         inpPret.classList.add("is-valid");
-        if (errorDiv) {
-            errorDiv.remove();
-        }
     }
 
+    if (isValid && errorDiv) {
+        errorDiv.remove();
+    }
 
     return isValid;
 }

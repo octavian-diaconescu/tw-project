@@ -2513,7 +2513,7 @@ textarea.form-control-lg {
   background-color: rgb(238.2, 202.8, 201.6);
 }
 .form-range::-webkit-slider-runnable-track {
-  width: 100%;
+  width: 30%;
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
@@ -2539,7 +2539,7 @@ textarea.form-control-lg {
   background-color: rgb(238.2, 202.8, 201.6);
 }
 .form-range::-moz-range-track {
-  width: 100%;
+  width: 30%;
   height: 0.5rem;
   color: transparent;
   cursor: pointer;

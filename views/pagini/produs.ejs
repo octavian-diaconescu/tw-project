@@ -23,12 +23,11 @@
                     <p>Data Adaugarii: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
                     <p>Culoare: <span class="pt_diabetici"><%- locals.prod.culoare %> </span></p>
                     <p>Specificatii: <span class="categorie"><%- locals.prod.specificatii %> </span></p>
-                    <p>Livrare Easybox?: <span class="categorie"><%- locals.prod.livrare_easybox ? "Da" : "Nu" %> </span></p>
+                    <p>Livrare Easybox: <span class="categorie"><%- locals.prod.livrare_easybox ? "Da" : "Nu" %> </span></p>
                     <figure class="imag-produs">
                         <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
                     </figure>    
                 </article>
-            
         </section>
     </main>
     <%- include("../fragmente/footer") %>

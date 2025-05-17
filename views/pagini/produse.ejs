@@ -19,10 +19,15 @@
         <div class="container" style="margin-top: 15px; padding-left: 13%; padding-right: 14%;">
             <div class="row">
                 <div class="col-12">
-                    <h2 style="padding-left: 325px;">Produse</h2>
+                    <h2 style="text-align: center; margin-bottom: 10px;">Produse</h2>
+                    <div id="div-nume">
+                        <input type="text" class="form-control" id="inp-nume" aria-describedby="subsol" placeholder="Numele produsului" autofocus="">
+                        <small id="subsol" class="form-text text-muted">Introdu numele produsului, fara filtrare avansata.</small>
+                    </div>
                 <div class="form-floating" style="margin-top: 25px; margin-bottom: 10px; width: 100%;">
-                    <textarea class="form-control" placeholder="Numele produsului" id="inp-nume"></textarea>
-                    <label for="inp-nume">Nume</label>
+                    <textarea class="form-control" placeholder="Filtre (+-)" id="inp-txtarea" area-describedby="subsol2"></textarea>
+                    <label for="inp-txtarea">Filtrare avansata</label>
+                    <small id="subsol2" class="form-text text-muted">Foloseste filtrare avansata.</small>
                 </div>
             </div>
             </div>
@@ -63,12 +68,14 @@
 
 
         <!-- <label> Pret minim: <span style="margin-right: 5px;">0</span> -->
-        <div class="range-pm" style="max-width: 10%">
+        <div class="range-pm" style="max-width: 30%;">
             <label for="inp-pret" class="form-label">Pret minin:</label>
-            <span style="margin-right: 5px; display: block;">0</span>
-            <input type="range" id="inp-pret" value="0" min="0"  max="12000" class="form-range">
-            <span style="margin-left:5px;">12000</span> 
-            <span id="infoRange">(0)</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>0</span>
+                <input type="range" id="inp-pret" value="0" min="0" max="12000" class="form-range" style="flex-grow: 1;">
+                <span>12000</span>
+                <span id="infoRange">(0)</span>
+            </div>
         </div>
         <label>Subcategorie:</label>
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
