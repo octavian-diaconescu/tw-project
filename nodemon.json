@@ -1,0 +1,16 @@
+{
+  "watch":[
+    "../resurse/css/",
+    "../resurse/js/",
+    "../views/"
+  ],
+  "ignore": [
+    "../resurse/css/customizare_boostrap.css",
+    "../resurse/css/nav.css",
+    "../resurse/css/nav700.css",
+    "../resurse/css/nav1000.css",
+    "../resurse/json/oferte.json"
+  ],
+  "ext": "js,css,ejs,json,scss",
+  "exec": "node index.js"
+}

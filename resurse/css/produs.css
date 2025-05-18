@@ -38,12 +38,12 @@ h3{
     width:50%;
     height:auto;
 }
-footer{
+/* footer{
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-}
+} */
 @media screen and (max-width: 700px){
     #art-produs{
         margin:0 auto;

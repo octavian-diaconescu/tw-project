@@ -36,7 +36,7 @@ td:nth-of-type(even){
     display: none;
 }
 th {
-    background-color: rgb(149, 39, 35);
+    background-color: #952723;
 }
 
 tfoot{

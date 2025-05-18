@@ -40,12 +40,8 @@ main{
 .grid-produse .produs .info-prod{
     display:flex;
     background-color: rgba(218, 15, 15, 0.2);
-    overflow: hidden;
-    /* height: 500px; */
-    /* border: 1px solid white; */
 }
 .grid-produse .produs .info-prod p{
-    /* text-align:center; */
     margin: 0 auto;
     font-weight:bold;
 }
@@ -71,7 +67,7 @@ main{
     display: inline-block;
     background-color: var(--culoare-mov);
     position:absolute;
-    bottom:0.5rem;
+    bottom:5rem;
     right:0.5rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -100,4 +96,32 @@ main{
 .grid-produse .produs .desc_imag p{
     width: 50%;
     text-align: center;
+}
+
+.compara-btn{
+    display: inline-block;
+    position: absolute;
+    max-height: 2.2rem;
+    right: 2rem;
+    bottom: 1rem;
+    margin-right: 14px;
+}
+
+.eticheta-ieftin {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    border-bottom: 2px solid black;
+}
+
+.pret-vechi s {
+  color: #888;
+}
+.pret-nou {
+  color: #c7514c;
+  font-weight: bold;
 }

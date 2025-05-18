@@ -6,7 +6,8 @@
         <title>Cyberware</title> 
         <%- include("../fragmente/head") %> 
         <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
-        
+        <script src="/resurse/js/compara.js"></script>
+
     </head>
     <body>
         <%- include("../fragmente/header") %>
@@ -26,7 +27,9 @@
                     <p>Livrare Easybox: <span class="categorie"><%- locals.prod.livrare_easybox ? "Da" : "Nu" %> </span></p>
                     <figure class="imag-produs">
                         <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
-                    </figure>    
+                    </figure>  
+                    <button class="btn btn-sm btn-primary text-secondary compara-btn" data-id="<%- prod.id %>" data-nume="<%- prod.nume %>">Compară</button>
+  
                 </article>
         </section>
     </main>

@@ -215,3 +215,24 @@ figure {
     width: 100%;
 }
 
+/*Sistem de oferte*/
+.banner-oferta {
+  background: #952723;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#oferta-timer {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+#oferta-timer.ultimele-secunde {
+  color: rgb(255, 200, 0);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+

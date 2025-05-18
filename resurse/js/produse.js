@@ -16,8 +16,8 @@ window.onload = function () {
         const plusKeywords= [];
         const minusKeywords= [];
         if (isKeywordSearch) {
-            descFilterRaw.split(/\s+/).forEach(w => {
-            if (w.startsWith('+') && w.length > 1) plusKeywords.push(w.slice(1));
+            descFilterRaw.split(/\s+/).forEach(w => { //split la spatii
+            if (w.startsWith('+') && w.length > 1) plusKeywords.push(w.slice(1)); //elimina "+"
             else if (w.startsWith('-') && w.length > 1) minusKeywords.push(w.slice(1));
             });
         }
@@ -26,25 +26,25 @@ window.onload = function () {
             return;
         }
         
-        let vectRadio = document.getElementsByName("gr_rad")
+        // let vectRadio = document.getElementsByName("gr_rad")
 
-        let inpCalorii = null
-        let minCalorii = null
-        let maxCalorii = null
-        for (let rad of vectRadio) {
-            if (rad.checked) {
-                inpCalorii = rad.value
-                if (inpCalorii != "toate") {
-                    [minCalorii, maxCalorii] = inpCalorii.split(":") //"350:700" -> ["350","700"]
-                    minCalorii = parseInt(minCalorii) //"350" -> 350
-                    maxCalorii = parseInt(maxCalorii)
-                }
-                break
-            }
-        }
+        // let inpCalorii = null
+        // let minCalorii = null
+        // let maxCalorii = null
+        // for (let rad of vectRadio) {
+        //     if (rad.checked) {
+        //         inpCalorii = rad.value
+        //         if (inpCalorii != "toate") {
+        //             [minCalorii, maxCalorii] = inpCalorii.split(":") //"350:700" -> ["350","700"]
+        //             minCalorii = parseInt(minCalorii) //"350" -> 350
+        //             maxCalorii = parseInt(maxCalorii)
+        //         }
+        //         break
+        //     }
+        // }
 
         let inpPret = document.getElementById("inp-pret").value
-        let inpSubCategorie = document.querySelector('input[name="subcategorie"]:checked').value.trim().toLowerCase();
+        let inpSubCategorie = document.querySelector('input[name="subcategorie"]:checked').value.trim().toLowerCase(); //ia doar primul element pe care il gaseste
 
         
         let produse = document.getElementsByClassName("produs")
@@ -119,8 +119,8 @@ window.onload = function () {
                 container.appendChild(prod);
                 prod.style.display = "block";
             });
-            const warnp = document.getElementById("warnp");
-            if (warnp) warnp.remove();
+            // const warnp = document.getElementById("warnp");
+            // if (warnp) warnp.remove();
         } else return;
         // let produse= document.getElementsByClassName("produs")
 

@@ -9,6 +9,7 @@
             
         <script type="text/javascript" src=../resurse/js/produse.js></script>
         <script type="text/javascript" src=../resurse/js/produse-cos.js></script>
+        <script src="/resurse/js/compara.js"></script>
     </head>
     <body>
 
@@ -68,42 +69,46 @@
 
 
         <!-- <label> Pret minim: <span style="margin-right: 5px;">0</span> -->
-        <div class="range-pm" style="max-width: 30%;">
-            <label for="inp-pret" class="form-label">Pret minin:</label>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span>0</span>
-                <input type="range" id="inp-pret" value="0" min="0" max="12000" class="form-range" style="flex-grow: 1;">
-                <span>12000</span>
-                <span id="infoRange">(0)</span>
+        <div style="margin: 10px 0px 0px 20px;">
+            <div class="range-pm" style="max-width: 30%;">
+                <label for="inp-pret" class="form-label">Pret minin:</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span>0</span>
+                    <input type="range" id="inp-pret" value="0" min="0" max="12000" class="form-range" style="flex-grow: 1;">
+                    <span>12000</span>
+                    <span id="infoRange">(0)</span>
+                </div>
             </div>
+            <label>Subcategorie:</label>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-toate" value="toate" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="subcat-toate">Toate</label>
+            <% for(let opt of locals.optiuniSubcategorie){ %>
+                <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-<%- opt.subcategorie %>" value="<%- opt.subcategorie.toLowerCase() %>" autocomplete="off">
+                <label class="btn btn-outline-primary" for="subcat-<%- opt.subcategorie %>"><%- opt.subcategorie %></label>
+            <% } %>
         </div>
-        <label>Subcategorie:</label>
-        <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-toate" value="toate" autocomplete="off" checked>
-        <label class="btn btn-outline-primary" for="subcat-toate">Toate</label>
-        <% for(let opt of locals.optiuniSubcategorie){ %>
-            <input type="radio" class="btn-check inp-categorie" name="subcategorie" id="subcat-<%- opt.subcategorie %>" value="<%- opt.subcategorie.toLowerCase() %>" autocomplete="off">
-            <label class="btn btn-outline-primary" for="subcat-<%- opt.subcategorie %>"><%- opt.subcategorie %></label>
-        <% } %>
-    </div>
 
-        <p style="margin-top: 15px">
-        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="filtrare"> <i class="bi bi-funnel"></i> <span>Filtreaza</span></button> 
-        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="resetare"><i class="bi bi-arrow-clockwise"></i> <span>Reseteaza</span></button>
-        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="sortCrescNume"><i class="bi bi-sort-alpha-down"></i> <span>Sortează crescator dupa pret si nume</span></button>
-        <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="sortDescrescNume"> <i class="bi bi-sort-alpha-up"></i><span>Sorteaza descrescator dupa pret si nume</span></button>
-        
-        </p>
+            <p style="margin-top: 15px">
+            <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="filtrare"> <i class="bi bi-funnel"></i> <span>Filtreaza</span></button> 
+            <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="resetare"><i class="bi bi-arrow-clockwise"></i> <span>Reseteaza</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm text-secondary fs-6" id="sortCrescNume"><i class="bi bi-sort-alpha-down"></i> <span>Sortează crescator dupa pret si nume</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm text-secondary fs-6" id="sortDescrescNume"> <i class="bi bi-sort-alpha-up"></i><span>Sorteaza descrescator dupa pret si nume</span></button>
+            
+            </p>
       
         <!-- <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p> -->
-        <button type="button" class="btn btn-primary text-secondary" id="btn-suma">Calculeaza suma preturilor afiste</button>
-  
+        <button type="button" class="btn btn-outline-primary text-secondary" id="btn-suma">Calculeaza suma preturilor afiste</button>
+  </div>
         <section id="produse">
 
             <h2>Produse</h2>
             <div class="grid-produse">
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" id="produs_<%-prod.id %>">
+                        <% if (prod.esteMinim) { %>
+                            <div class="eticheta-ieftin">Cel mai ieftin produs din aceasta categorie!</div>
+                        <% } %>
                         <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
                         <div class="desc_imag">
@@ -116,6 +121,11 @@
                             <ul>
                             <li>
                                 <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                                <% if (oferta && prod.categorie === oferta.categorie) { %>
+                                <p class="pret-vechi">Preț vechi: <s><%= (+prod.pret).toFixed(2) %> RON</s></p>
+                                <p class="pret-nou">Preț nou: <%= (+prod.pret * (1 - oferta.reducere/100)).toFixed(2) %> RON</p>
+                                <% } %>
+
                             </li>
                             <li>
                                 <p class="subcategorie">Subcategorie: <span class="val-subcategorie"><%- prod.subcategorie%></span></p>
@@ -152,13 +162,12 @@
 
                             
                         </ul>
-                        </div>
-                        
-                        
                         <label class="selecteaza-cos">
                             Selectează:<br/>
                             <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                        </label>
+                        </label>  
+                        <button class="btn btn-sm btn-primary text-secondary compara-btn" style="right:0;" data-id="<%- prod.id %> " data-nume="<%- prod.nume %>">Compară</button>
+                        </div>
                     </article>
                 <% }%>
             </div>

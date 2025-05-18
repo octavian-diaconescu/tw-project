@@ -8,6 +8,7 @@
             content="Componente PC la preturi accesibile!">
         <link rel="stylesheet" type="text/css" href="resurse/css/pagina-principala.css">
         <link rel="stylesheet" type="text/css" href="resurse/css/tabel.css">
+        <script src="/resurse/js/oferta.js"></script>
         <%- include("../fragmente/head.ejs") %>
     </head>
     <body class="Container light-theme">
@@ -152,11 +153,14 @@
                     </section>
                     <section id="anunturi">
                         <h2>ANUNTURI</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ipsam atque aliquid hic, sequi vero dolores,
-                            laborum eius nulla accusamus possimus non molestiae
-                            reiciendis blanditiis libero deserunt unde et quasi!
-                            Quisquam.</p>
+                        <% if (oferta) { %>
+                        <div id="oferta" class="banner-oferta">
+                            <p>Oferta curenta pentru <strong><%= oferta.categorie %></strong>: –<%= oferta.reducere %>%</p>
+                            <div id="oferta-timer" data-end="<%= oferta['data-finalizare'] %>"></div>
+                        </div>
+                        
+                        <% } %>
+
                     </section>
                     <section id="utilizatori_online">
                         <h2>UTILIZATORI ONLINE</h2>
