@@ -12,7 +12,7 @@ client = new Client({
     user: "doctavian",
     password: "parola",
     host: "localhost",
-    port: 5432,
+    port: 5433,
 })
 
 client.connect()
@@ -79,6 +79,7 @@ function curataOferte() {
     const filtrate = oferte.filter(o => {
         return new Date(o["data-finalizare"]).getTime() >= prag;
     });
+
     if (filtrate.length !== oferte.length) {
         writeOferte(filtrate);
         console.log(`${oferte.length - filtrate.length} oferte vechi sterse.`);
@@ -336,6 +337,7 @@ app.get("/produse", function (req, res) {
 
     let queryOptiuni = "select * from unnest(enum_range(null::categorie_mare))";
     let queryOptiuniSubcategorie = "select distinct subcategorie from produse order by subcategorie";
+    let queryOptiuniCulori = "select distinct culoare from produse order by culoare"
 
     client.query(queryOptiuni, function (err, rezOptiuni) {
         if (err) {
@@ -374,12 +376,24 @@ app.get("/produse", function (req, res) {
                     }
 
                     const ofertaCurenta = readOferte()[0] || null;
-                    res.render("pagini/produse", {
-                        produse: produse,
-                        optiuni: rezOptiuni.rows,
-                        optiuniSubcategorie: rezOptiuniSubcategorie.rows,
-                        oferta: ofertaCurenta
+
+                    client.query(queryOptiuniCulori, function(err, rezOptiuniCulori){
+                        if(err){
+                            console.log(err);
+                            afisareEroare(res,2);
+                            return;
+                        }
+                        else{
+                            res.render("pagini/produse", {
+                            produse: produse,
+                            optiuni: rezOptiuni.rows,
+                            optiuniSubcategorie: rezOptiuniSubcategorie.rows,
+                            optiuniCulori: rezOptiuniCulori.rows,
+                            oferta: ofertaCurenta
+                    })  
+                        }
                     })
+                    
                 }
             })
         });

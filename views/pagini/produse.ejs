@@ -69,6 +69,9 @@
 
 
         <!-- <label> Pret minim: <span style="margin-right: 5px;">0</span> -->
+        <div class="container" style="margin-left: 15px;">
+            <span id="prod-count" class="btn btn-primary text-secondary"></span>
+        </div>
         <div style="margin: 10px 0px 0px 20px;">
             <div class="range-pm" style="max-width: 30%;">
                 <label for="inp-pret" class="form-label">Pret minin:</label>
@@ -89,6 +92,17 @@
             <% } %>
         </div>
 
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="inp-culoare">Culoare:</label>
+                <input class="form-control" list="culori" id="inp-culoare" name="culoare" 
+                    placeholder="Alege o culoare..." style="max-width: 200px;">
+                <datalist id="culori">
+                    <option value="toate">toate</option>
+                    <% for(let opt of locals.optiuniCulori){ %>
+                        <option value="<%- opt.culoare.toLowerCase() %>"><%- opt.culoare %></option>
+                    <% } %>
+                </datalist>
+            </div>
             <p style="margin-top: 15px">
             <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="filtrare"> <i class="bi bi-funnel"></i> <span>Filtreaza</span></button> 
             <button type="button" class="btn btn-primary btn-sm text-secondary fs-6" id="resetare"><i class="bi bi-arrow-clockwise"></i> <span>Reseteaza</span></button>
@@ -159,7 +173,9 @@
                             <li>
                                <p class="livrare">Livrare Easybox: <span class="val-livrare"><%- prod.livrare_easybox ? "Da" : "Nu" %></span></p> 
                             </li>
-
+                            <li>
+                            <p class="culoare">Culoare: <span class="val-culoare"><%- prod.culoare %></span> </p>    
+                            </li>
                             
                         </ul>
                         <label class="selecteaza-cos">
